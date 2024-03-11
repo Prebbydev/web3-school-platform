@@ -1,0 +1,32 @@
+
+.sidebar {
+  width: 200px; 
+  height: 100vh;
+  background-color: #d5d5e7;
+
+}
+  
+.sidebar ul {
+  list-style-type: none;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.sidebar ul li {
+  padding: 10px;
+  margin-bottom: 5%;
+  cursor: pointer;
+}
+
+.dash:hover {
+  background-color: #b3b3cc;
+}
+.dash{
+  display: flex;
+  margin-bottom: 20%;
+}
+.dash_icon{
+  margin-top: 8.5px;
+  font-size: 20px;
+}
+  

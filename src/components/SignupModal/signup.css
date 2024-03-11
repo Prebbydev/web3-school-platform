@@ -1,0 +1,112 @@
+
+.signUpDiv{
+    position: fixed;
+    top:20%;
+    left: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.signUp_content{
+    border-radius: 10px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    width: 400px;
+    height: 450px;
+    
+    
+}
+.signUp_content form{
+    margin-left: 11%;
+}
+.signUp_content h2{
+    text-align: center;
+    color: rgb(47, 47, 209);
+    font-size: 30px;
+    margin-top: 40px;
+}
+.signUp_content h5{
+    font-size: 13px;
+    cursor: pointer;
+}
+.signUp_content p{
+    font-size: 12px;
+    position: absolute;
+    margin-top: 17%;
+    left: 32%;
+}
+.logUser i{
+    cursor: pointer;
+    color: rgb(47, 47, 209);
+  }
+.signUp_content button{
+    position: absolute;
+    left: 26%;
+    background-color: rgb(47, 47, 209);
+    color: white;
+    width: 200px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    margin-top: 5%;
+}
+.signInput input{
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 300px;
+    border:none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    resize: vertical;
+    display: inline-block;
+    position: relative;
+}
+  
+.signInput p{
+    position: absolute;
+    bottom: 22%;
+    transform: translateY(-50%);
+    padding-bottom: 10px;
+    color: rgb(47, 47, 209);
+    cursor: pointer;
+    font-size: 13px;
+    left: 77%;
+}
+.signLabel,.signInput{
+    margin-bottom: -10px;
+}
+.signIn{
+    margin-bottom: 10px;
+}
+  
+  
+.signIn label{
+    padding: 12px 12px 12px 12px;
+    display: inline-block;
+    color: #333333;
+    font-size: 15px;
+}
+.close{
+    font-size: 20px;
+    position: absolute;
+    top: 20px;
+    color:#333333;
+    right: 40px;
+    cursor: pointer;
+}
+.close:hover{
+font-size: 30px;
+}
+
+.signUpmessage{
+  margin-top: -120px;
+  margin-left: 130px;
+  transform: translate(-50%,-50%);
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+  padding: 10px;
+}
+  
