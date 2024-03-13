@@ -59,37 +59,37 @@ const UserProfile = () => {
             {profilePicture ? null : <p>Add Profile Picture</p>}
             <div className="profile-form">
                 <label htmlFor="firstname">First Name:</label>
-                <input type="text" placeholder="First Name" value={firstName} onChange={(e) => setFirstName(e.target.value)} disabled={!isEditing} />
+                <input type="text" id='firstname' placeholder="First Name" value={firstName} onChange={(e) => setFirstName(e.target.value)} disabled={!isEditing} />
                 <label htmlFor="lastname">Last Name:</label>
-                <input type="text" placeholder="Last Name" value={lastName} onChange={(e) => setLastName(e.target.value)} disabled={!isEditing} />
+                <input type="text" id='lastname' placeholder="Last Name" value={lastName} onChange={(e) => setLastName(e.target.value)} disabled={!isEditing} />
                 <label htmlFor="othername">Other Name(s):</label>
-                <input type="text" placeholder="Other Names" value={otherNames} onChange={(e) => setOtherNames(e.target.value)} disabled={!isEditing} />
+                <input type="text" id='othername' placeholder="Other Names" value={otherNames} onChange={(e) => setOtherNames(e.target.value)} disabled={!isEditing} />
                 <label htmlFor="regnum">Reg Number:</label>
-                <input type="text" placeholder="Registration Number" value={registrationNumber} onChange={(e) => setRegistrationNumber(e.target.value)} disabled={!isEditing} />
+                <input type="text" id='regnum' placeholder="Registration Number" value={registrationNumber} onChange={(e) => setRegistrationNumber(e.target.value)} disabled={!isEditing} />
                 <label htmlFor="email">Email Address:</label>
-                <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} disabled={!isEditing} />
+                <input type="email" id='email' placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} disabled={!isEditing} />
                 <label htmlFor="faculty">Faculty:</label>
-                <input type="text" placeholder="Faculty" value={faculty} onChange={(e) => setFaculty(e.target.value)} disabled={!isEditing} />
+                <input type="text" id='faculty' placeholder="Faculty" value={faculty} onChange={(e) => setFaculty(e.target.value)} disabled={!isEditing} />
                 <label htmlFor="department">Department:</label>
-                <input type="text" placeholder="Department" value={department} onChange={(e) => setDepartment(e.target.value)} disabled={!isEditing} />
+                <input type="text" id='department' placeholder="Department" value={department} onChange={(e) => setDepartment(e.target.value)} disabled={!isEditing} />
                 <label htmlFor="level">Level:</label>
-                <input type="text" placeholder="Level" value={level} onChange={(e) => setLevel(e.target.value)} disabled={!isEditing} />
+                <input type="text" id='level' placeholder="Level" value={level} onChange={(e) => setLevel(e.target.value)} disabled={!isEditing} />
                 <label htmlFor="gender">Gender:</label>
-                <input type="text" placeholder="Gender" value={gender} onChange={(e) => setGender(e.target.value)} disabled={!isEditing} />
+                <input type="text" id='gender' placeholder="Gender" value={gender} onChange={(e) => setGender(e.target.value)} disabled={!isEditing} />
                 <label htmlFor="Dob">Date Of Birth:</label>
-                <input type="date" placeholder="Date of Birth" value={dateOfBirth} onChange={(e) => setDateOfBirth(e.target.value)} disabled={!isEditing} />
+                <input type="date" id='Dob' placeholder="Date of Birth" value={dateOfBirth} onChange={(e) => setDateOfBirth(e.target.value)} disabled={!isEditing} />
                 <label htmlFor="nationality">Nationality:</label>
-                <input type="text" placeholder="Nationality" value={nationality} onChange={(e) => setNationality(e.target.value)} disabled={!isEditing} />
+                <input type="text" id='nationality' placeholder="Nationality" value={nationality} onChange={(e) => setNationality(e.target.value)} disabled={!isEditing} />
                 <label htmlFor="state">State Of Origin::</label>
-                <input type="text" placeholder="State of Origin" value={stateOfOrigin} onChange={(e) => setStateOfOrigin(e.target.value)} disabled={!isEditing} />
+                <input type="text" id='state' placeholder="State of Origin" value={stateOfOrigin} onChange={(e) => setStateOfOrigin(e.target.value)} disabled={!isEditing} />
                 <label htmlFor="maritalStatus">Marital Status:</label>
-                <input type="text" placeholder="Marital Status" value={maritalStatus} onChange={(e) => setMaritalStatus(e.target.value)} disabled={!isEditing} />
+                <input type="text" id='maritalStatus' placeholder="Marital Status" value={maritalStatus} onChange={(e) => setMaritalStatus(e.target.value)} disabled={!isEditing} />
                 <label htmlFor="phoneNumber">Phone Number:</label>
-                <input type="tel" placeholder="Phone Number" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} disabled={!isEditing} />
+                <input type="tel" id='phoneNumber' placeholder="Phone Number" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} disabled={!isEditing} />
                 <label htmlFor="schoolEmail">School Email:</label>
-                <input type="email" placeholder="School Email" value={schoolEmail} onChange={(e) => setSchoolEmail(e.target.value)} disabled={!isEditing} />
+                <input type="email" id='schoolEmail' placeholder="School Email" value={schoolEmail} onChange={(e) => setSchoolEmail(e.target.value)} disabled={!isEditing} />
                 <label htmlFor="year">Year Of Entry:</label>
-                <input type="text" placeholder="Year of Entry" value={yearOfEntry} onChange={(e) => setYearOfEntry(e.target.value)} disabled={!isEditing} />
+                <input type="text" id='year' placeholder="Year of Entry" value={yearOfEntry} onChange={(e) => setYearOfEntry(e.target.value)} disabled={!isEditing} />
                 <label htmlFor="mode">Mode Of Admission:</label>
                 <select value={modeOfAdmission} onChange={(e) => setModeOfAdmission(e.target.value)} disabled={!isEditing}>
                     <option value="">Select Mode of Admission</option>

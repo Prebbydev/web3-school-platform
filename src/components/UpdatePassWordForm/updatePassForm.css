@@ -1,0 +1,41 @@
+
+.update-password-form {
+    max-width: 400px;
+    margin: 60px 0 0 10px ;
+}
+
+.update-password-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.update-password-form input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.update-password-form button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.update-password-form button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.update-password-form button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+.update-password-form p {
+    margin-top: 10px;
+}

@@ -2,6 +2,7 @@
 import React from 'react';
 import '../SideBar/sidebar.css';
 import { AiOutlineDashboard, AiOutlineUser,AiOutlineBook,AiOutlineBell,AiOutlineLogout } from 'react-icons/ai';
+import { FaUsers } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Sidebar = ({ onSectionChange }) => {
@@ -22,7 +23,11 @@ const Sidebar = ({ onSectionChange }) => {
         </div>
         <div className='dash'>
           <div className='dash_icon'><AiOutlineBook/> </div>
-          <div><li onClick={() => handleSectionChange('course')}>Courses</li></div>
+          <div><li onClick={() => handleSectionChange('courses')}>Courses</li></div>
+        </div>
+        <div className='dash'>
+          <div className='dash_icon'><FaUsers /> </div>
+          <div><li onClick={() => handleSectionChange('community')}>Community</li></div>
         </div>
         <div className='dash'>
           <div className='dash_icon'><AiOutlineBell/> </div>
@@ -30,11 +35,13 @@ const Sidebar = ({ onSectionChange }) => {
         </div>
         <div className='dash'>
           <div className='dash_icon'><AiOutlineLogout/> </div>
+          <Link to="/" style={{textDecoration:"none"}}>
           <div>
              <li style={{color:"#333333"}} >
-              <Link to="/">Logout </Link>
+              Logout 
               </li>
           </div>
+          </Link>
         </div>
       </ul>
     </div>
