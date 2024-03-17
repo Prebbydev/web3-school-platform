@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaArrowUp } from 'react-icons/fa';
-import '../Dashboard/dashboard.css';
-import Greeting from '../Greetings/greetings';
-import PerformanceAnalysis from '../PerformanceAnalysis/performance';
-import Quotes from '../Quotes/quotes';
-import Tasks from '../Tasks/tasks';
-import UpdatePasswordForm from '../UpdatePassWordForm/updatePassForm';
+import './dashboard.css';
+import Greeting from '../../components/Greetings/greetings';
+import PerformanceAnalysis from '../../components/PerformanceAnalysis/performance';
+import Quotes from '../../components/Quotes/quotes';
+import Tasks from '../../components/Tasks/tasks';
+import UpdatePasswordForm from '../../components/UpdatePassWordForm/updatePassForm';
 
 const UserDash = () => {
     const name = 'Precious'; 

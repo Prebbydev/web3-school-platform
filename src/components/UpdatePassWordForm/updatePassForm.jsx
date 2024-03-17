@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import '../UpdatePassWordForm/updatePassForm.css';
+import './updatePassForm.css';
 
 const UpdatePasswordForm = () => {
     const [currentPassword, setCurrentPassword] = useState('');

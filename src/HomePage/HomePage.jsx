@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import './HomePage.css';
+import { Link } from 'react-router-dom';
 import logo from '../Images/logo.png';
 import course from '../Images/course.jpg';
 import communication from '../Images/community.jpg';
@@ -68,7 +69,7 @@ function HomePage() {
                 <div className='nav-bar'>
                     <ul className='menu'>
                     <a href='#home'> <li>Home</li></a>
-                        <li>Courses</li>
+                        <Link to="/courses"><li>Courses</li></Link>
                         <li><a href='#about-us'>About Us</a></li>
                         <li><a href='#contact'>Contact</a></li>
                         <li><a href='#testimony'>Testimonials</a></li>
@@ -236,7 +237,7 @@ function HomePage() {
                     </div>
                     <div className='contact-1'>
                         <FiMail className='contact_icon'/>
-                        <p>support@wellsyaxademy.com</p>
+                        <p>support@wellsyacademy.com</p>
                     </div>
                     <div className='contact-1'></div>
                 </div>
