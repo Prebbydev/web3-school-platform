@@ -8,7 +8,7 @@ import UserDash from "./components/Dashboard/dashboard"
 import Courses from "./components/Courses/courses"
 import Community from "./components/Community/community"
 import { useState } from 'react';
-
+import AuthMiddleware from "../middlewares/AuthMiddleware"
 const Home = () => {
   const [currentSection, setCurrentSection] = useState('dashboard');
 
@@ -16,6 +16,8 @@ const Home = () => {
     setCurrentSection(section);
   };
   return (
+    <AuthMiddleware>
+
     <div className="dashboard-container">
       <Sidebar onSectionChange={handleSectionChange} />
 
@@ -28,6 +30,7 @@ const Home = () => {
 
       </div>
     </div>
+    </AuthMiddleware>
   );
 };
 

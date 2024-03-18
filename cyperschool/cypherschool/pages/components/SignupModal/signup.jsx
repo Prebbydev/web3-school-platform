@@ -1,12 +1,16 @@
 // SignUpModal.js
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { AiOutlineMail, AiOutlineLock } from 'react-icons/ai';
 import { FaUser } from 'react-icons/fa';
 import LoginModal from '../LoginModal/login';
+import useRegister from "../../../hooks/useRegister"
+import { validateEmail, validatePassword } from "../../../helpers/validation";
+import { useRouter } from "next/router";
+import useValidation from "../../../hooks/useValidation";
+
 
 function SignUpModal({ toggleModal, openLoginModal }) {
     const [formData, setFormData] = useState({
-        username: '',
         email: '',
         password: '',
     });
@@ -40,39 +44,36 @@ function SignUpModal({ toggleModal, openLoginModal }) {
             [e.target.name]: e.target.value,
         });
     };
+    const emailError = useValidation(formData.email, validateEmail);
+  const passwordError = useValidation(formData.password, validatePassword);
+  const isValidTogether = useCallback(() => {
+    if (emailError?.type === "error") {
+      return false;
+    }
+
+    if (passwordError?.type === "error") {
+      return false;
+    }
+
+    return true;
+  }, [emailError, passwordError]);
+  const email = formData.email
+  const password = formData.password
+
+  const { register, notification, isLoading } = useRegister()
+
 
     const handleSubmitSignUp = async (e) => {
         e.preventDefault();
-        setLoading(true);
-
-        try {
-            // Replace the empty string with your backend API URL
-            const response = await fetch('YOUR_API_ENDPOINT_HERE', {
-                method: 'POST',
-                headers: {
-                    'Content-type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
-
-            if (response.ok) {
-                const data = await response.json();
-                console.log('SignUp successful:', data);
-                setSuccessMessage('SignUp successful! Check Email for confirmation');
-                setTimeout(() => {
-                    setShowLoginModal(true);
-                }, 5000);
-            } else {
-                const errorData = await response.json();
-                console.error('Signup error:', errorData);
-            }
-        } catch (error) {
-            console.error('Error:', error);
-        } finally {
-            setLoading(false);
-        }
-
-        setError(null);
+        
+        if (!isValidTogether()) {
+            return;
+          }
+      
+          if (await register()) {
+            navigate.push("/");
+          }
+        
     };
 
     // function for hide and show password

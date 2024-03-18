@@ -10,6 +10,7 @@ import {FiMail} from 'react-icons/fi';
 import {GrLocation} from 'react-icons/gr';
 import LoginModal from "./components/LoginModal/login"
 import SignUpModal from "./components/SignupModal/signup"
+import useAuthenticated from "../hooks/useAuthentication"
 const Home: NextPage = () => {
   //function for Testimonial change
   const [currentIndex,setCurrentIndex]= useState(0);
@@ -19,6 +20,15 @@ const Home: NextPage = () => {
   const showPreviousTestimonial=()=>{
       setCurrentIndex((prevIndex)=> (prevIndex-1+3)% 3);
   };
+
+  const { isLoading, authenticated: isAuthenticated } = useAuthenticated();
+console.log(isAuthenticated);
+
+let token;
+if (typeof window !== "undefined") {
+    token = localStorage.getItem("token");
+}
+
 
   //function for support submission
   const[confirmatonVisible,setConfirmationVisible]= useState(false);
@@ -50,6 +60,11 @@ const Home: NextPage = () => {
       setShowSignUpModal(!showSignUpModal);
   };
 
+  const removeToken = () => {
+    if (typeof window !== "undefined") {
+        localStorage.removeItem('token')
+    }
+  }
   
   
 
@@ -68,9 +83,20 @@ const Home: NextPage = () => {
                       <li><a href='#contact'>Contact</a></li>
                       <li><a href='#testimony'>Testimonials</a></li>
                       <li><a href='#support'>Support</a></li>
-                      <li onClick={handleSignUpClick}>Sign Up</li>
+                      {isAuthenticated ? 
+                      <>
+                      <li> <Link href={'/dashboard'}>Dashboard</Link> </li> 
+                      <li onClick={removeToken}>Logout</li>
+                      </>
+                    : (
+
+                       <>
+                        <li onClick={handleSignUpClick}>Sign Up</li>
+                        <li onClick={handleLoginClick}>Log In </li>
+                       </>
+                    )}
                       
-                      <li onClick={handleLoginClick}>Log In </li>
+                     
                       
                   </ul>
               </div>
