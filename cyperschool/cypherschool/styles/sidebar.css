@@ -29,4 +29,81 @@
   margin-top: 8.5px;
   font-size: 20px;
 }
+.tooltip{
+  visibility: hidden;
+  width: 120px;
+  text-align: center;
+  color: black;
+  text-align: left;
+  position: absolute;
+  z-index: 1;
+  margin-top: 23%;
+  margin-left: 55%;
+  transition: opacity 0.3s;
+}
+@media only screen and (max-width:912px) {
+  .sidebar{
+    width: 180px;
+  }
+}
   
+@media only screen and (max-width:860px) {
+  .sidebar{
+    width: 150px;
+  }
+}
+
+@media only screen and (max-width:540px) {
+  .sidebar{
+    width: 100px;
+    height: 100%;
+  }
+
+  .sidebar ul li {
+    display: none;
+  }
+  .dash{
+    margin-top: 50px;
+
+  }
+  .dash_icon{
+    font-size: 30px;
+    
+    margin-left: 18px;
+  }
+
+  .dash_icon:hover .tooltip{
+    visibility: visible;
+    opacity: 1;
+  }
+
+}
+@media only screen and (max-width:430px) {
+  .sidebar{
+    width: 70px;
+  }
+  .dash_icon{
+    margin-left: 3px;
+  }
+}
+
+@media only screen and (max-width:415px) {
+  .sidebar{
+    width: 80px;
+    height: 100%;
+  }
+  .dash_icon{
+    margin-left: 8px;
+  }
+
+}
+
+@media only screen and (max-width:280px) {
+  .sidebar{
+    width: 60px;
+  }
+
+  .dash_icon{
+    margin-left: -4px;
+  }
+}

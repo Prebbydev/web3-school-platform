@@ -60,3 +60,36 @@
     right: 3%;
     color: #007bff;
 }
+
+@media only screen and (max-width: 600px) {
+    .tasks-container {
+        margin-top: 20px; 
+        margin-left: 0; 
+    }
+
+    .task-input input {
+        width: 230px; 
+    }
+
+    .task-input button {
+        padding: 10px 15px;
+        font-size: 15px;
+    }
+
+    .task-check {
+        right: 5px; 
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .task-input input {
+        width: 100px; 
+    }
+
+}
+@media only screen and (max-width: 280px) {
+    .task-input button {
+        padding: 15px ;
+        font-size: 5px;
+    }
+}

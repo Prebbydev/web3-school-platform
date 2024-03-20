@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../Community/community.css';
+import './community.css';
 import ChatBox from '../ChatBox/chatbox';
 import student1 from '../../Images/student_1.png';
 import student2 from '../../Images/student_2.png';
@@ -52,7 +52,7 @@ const Community = () => {
             </div>
             {selectedUser && selectedUser.id === user.id && (
               <div className="chatbox">
-                <h3>Chatting with {selectedUser.name}</h3>
+                <h3>&nbsp; &nbsp;Chatting with {selectedUser.name}</h3>
                 <ChatBox />
               </div>
             )}

@@ -71,3 +71,56 @@
 .input-box button:hover {
   background-color: #007bff;
 }
+@media only screen and (max-width: 768px) {
+  .chat-box {
+      width: 100%; 
+      margin: 5px auto; 
+  }
+  .message-box {
+    max-height: 100px; 
+}
+.message {
+  padding: 6px; 
+  margin-bottom: 3px; 
+}
+.chat-header p{
+  font-size: 13px;
+}
+
+.input-box input {
+  width: 60px; 
+}
+
+.input-box button {
+  padding: 6px 12px;
+}
+}
+
+@media only screen and (max-width: 600px) {
+  .chat-box {
+      width: 90%; 
+      margin: 20px auto; 
+  }
+
+  .message-box {
+      max-height: 150px; 
+  }
+
+  .message {
+      padding: 6px; 
+      margin-bottom: 3px; 
+  }
+
+  .input-box {
+      padding: 8px; 
+  }
+
+  .input-box input {
+      padding: 6px; 
+  }
+
+  .input-box button {
+      padding: 6px 12px;
+      margin-left: 5px;
+  }
+}

@@ -39,7 +39,7 @@ const UserDash = () => {
     };
 
     return (
-        <div style={{ marginTop: "20px", padding: "20px" }}>
+        <div style={{ marginTop: "20px", padding: "20px" }} className='widget-container'>
             <div style={{ display: "flex", gap: "10px", marginLeft: "10px" }}>
                 <div>
                     {isOnDashboard ? (

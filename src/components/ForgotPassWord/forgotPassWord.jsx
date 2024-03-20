@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { AiOutlineMail} from 'react-icons/ai';
-import '../ForgotPassWord/forgotPassWord.css';
+import './forgotPassWord.css';
 import LoginModal from '../LoginModal/login';
 
 function ForgotPasswordModal({ toggleModal }) {

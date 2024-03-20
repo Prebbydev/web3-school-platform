@@ -1765,7 +1765,7 @@ const CoursePlaylist = ({ course }) => {
         <div className='message'>Quiz Completed! Check portal for score.</div>
       )}
 
-        <div style={{padding:'30px 30px 40px 0px'}}><a href='#goTop'style={{textDecoration:'none', color:'#000080',fontWeight:'700'}}>Back to Top</a></div>
+        <div className='back' style={{padding:'30px 30px 40px 0px'}}><a href='#goTop'style={{textDecoration:'none', color:'#000080',fontWeight:'700'}}>Back to Top</a></div>
 
         
       

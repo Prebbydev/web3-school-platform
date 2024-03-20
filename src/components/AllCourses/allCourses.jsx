@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import CourseCard from '../AllCourses/courseCard/courseCard';
-import CourseModal from '../AllCourses/courseModal/courseModal';
+import './allCourses.css';
+import CourseCard from './courseCard/courseCard';
+import CourseModal from './courseModal/courseModal';
 import { Link } from 'react-router-dom';
 
 const AllCourses = () => {
@@ -80,10 +81,10 @@ const AllCourses = () => {
     ];
 
     return (
-        <div className="container" style={{height:'2200px'}}>
-            <div style={{padding:'20px', color:' rgb(47, 47, 209)', cursor:'pointer'}}><Link to='/' style={{textDecoration:'none'}}><p> <b>&lt;&nbsp;&nbsp;</b>  Go to HomePage</p></Link></div>
-            <h1 style={{padding:'20px ', color:'#333333',textAlign:'center'}}>List Of Courses We Offer</h1>
-            <div className="courses" style={{display:"grid" ,gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px'}}>
+        <div className="courses_container" >
+            <div className='home-div' ><Link to='/' style={{textDecoration:'none'}}><p> <b>&lt;&nbsp;&nbsp;</b>  Go to HomePage</p></Link></div>
+            <h1>List Of Courses We Offer</h1>
+            <div className="all_courses" >
                 {courses.map((course, index) => (
                     <CourseCard key={index} course={course} openModal={openModal} />
                 ))}

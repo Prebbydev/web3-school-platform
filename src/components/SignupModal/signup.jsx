@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { AiOutlineMail, AiOutlineLock } from 'react-icons/ai';
 import { FaUser } from 'react-icons/fa';
-import '../SignupModal/signup.css';
+import './signup.css';
 import LoginModal from '../LoginModal/login';
 
 function SignUpModal({ toggleModal, openLoginModal }) {

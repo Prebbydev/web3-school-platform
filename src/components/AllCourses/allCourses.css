@@ -1,0 +1,38 @@
+
+.courses_container {
+    height: 2200px;
+}
+
+.courses_container h1 {
+    padding: 20px;
+    color: #333333;
+    text-align: center;
+}
+
+.home-div {
+    padding: 20px;
+    color: rgb(47, 47, 209);
+    cursor: pointer;
+}
+
+.all_courses {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+    .coourses_container {
+        height: auto;
+    }
+
+    .all_courses {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .all_courses {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

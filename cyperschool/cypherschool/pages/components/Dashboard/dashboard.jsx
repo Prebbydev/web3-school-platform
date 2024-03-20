@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaArrowUp } from 'react-icons/fa';
-// import './dashboard.css';
+import './dashboard.css';
 import Greeting from '../../components/Greetings/greetings';
 import PerformanceAnalysis from '../../components/PerformanceAnalysis/performance';
-import Quotes from '../../components/Quotes/quotes';
+import Quotes from '../Quotes/quotes';
 import Tasks from '../../components/Tasks/tasks';
 import UpdatePasswordForm from '../../components/UpdatePassWordForm/updatePassForm';
 
@@ -39,7 +39,7 @@ const UserDash = () => {
     };
 
     return (
-        <div style={{ marginTop: "20px", padding: "20px" }}>
+        <div style={{ marginTop: "20px", padding: "20px" }} className='widget-container'>
             <div style={{ display: "flex", gap: "10px", marginLeft: "10px" }}>
                 <div>
                     {isOnDashboard ? (
@@ -76,6 +76,10 @@ const UserDash = () => {
                         <p className="widget-title">Daily Tasks</p>
                         <p className='widget-value'> <FaArrowUp className='up-arrow'/> </p>
                     </div>
+                </div>
+
+                <div style={{marginLeft:'10px'}}>
+                   <p>Link to live class: <a href='meet.google.com/ugk-hqjb-neh'>meet.google.com/ugk-hqjb-neh</a></p>
                 </div>
 
                 <div className="performance-analysis">

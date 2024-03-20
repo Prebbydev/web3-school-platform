@@ -31,7 +31,7 @@ const UserCourseCard = ({ course, onClick }) => {
         'Smart Contract Auditing': img11,
         'Blockchain Governance': img12,
         'Hyperledger Fabric Dev': img13,
-        'Blockchain Integration with IoT': img14,
+        'Blockchain IoT Integration': img14,
         'Web3.js Advanced Techniques': img15
     };
 

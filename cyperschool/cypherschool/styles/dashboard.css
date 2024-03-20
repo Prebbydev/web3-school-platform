@@ -57,3 +57,33 @@ body {
 .performance-analysis{
     margin-top: 80px;
 }
+
+
+@media only screen and (max-width: 1024px) {
+    .widget {
+        width: 300px;
+        padding: 30px 15px; 
+        margin-bottom: 15px; 
+    }
+
+    .performance-analysis{
+        width: 750px;
+    }
+}
+
+@media only screen and (max-width:853px) {
+    .widget {
+        width: 250px;
+        padding: 20px 7px; 
+        margin-bottom: 15px; 
+    }
+
+    .performance-analysis{
+        width: 550px;
+    }
+    .top-widget,.bottom-widget{
+        
+        gap: 10px;
+    
+    }
+}

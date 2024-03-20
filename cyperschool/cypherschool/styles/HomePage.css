@@ -1,13 +1,15 @@
-
-body{
+/* Base styles */
+body {
   color: #333333;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-.container{
+
+.container {
   background-color: #ffffff;
   height: 100vh;
 }
-.section-1{
+
+.section-1 {
   display: flex;
   justify-content: space-between;
   height: 80px;
@@ -17,73 +19,84 @@ body{
   z-index: 999;
   top: 0;
   background-color: white;
-  
 }
-.logo{
+
+.logo {
   flex: 1;
   max-width: 200px;
 }
-.nav-bar{
+
+.nav-bar {
   width: 900px;
   margin-left: 50px;
-  
 }
-.logo-pic{
+
+.logo-pic {
   width: 200px;
   height: 92px;
 }
-.menu{
+
+.menu {
   display: flex;
   list-style: none;
   gap: 45px;
   margin-top: 27px;
   font-size: 16px;
   cursor: pointer;
-  color:#333333 ;
+  color: #333333;
 }
-.menu a{
+
+.menu a {
   text-decoration: none;
-  color:inherit ;
+  color: inherit;
 }
-.menu a:active{
+
+.menu a:active {
   color: rgb(47, 47, 209);
 }
-.menu li:hover{
-  color:rgb(47, 47, 209) ;
+
+.menu li:hover {
+  color: rgb(47, 47, 209);
   font-weight: 600;
 }
-.hero_section{
+
+.hero_section {
   height: 650px;
   margin-top: 100px;
-  background-image: url("../public/bannerr.jpg");
+  background-image: url("../Images/bannerr.jpg");
   background-size: cover;
 }
-.overlay{
+
+.overlay {
   position: absolute;
   width: 100%;
-  height: 105%;
+  height: 650px;
   background-color: rgba(255, 255, 255, 0.5);
 }
-.hero_content{
+
+.hero_content {
   position: relative;
   z-index: 1;
   padding: 120px;
- width: 700px;
- line-height: 30px;
- color: #333333;
+  width: 700px;
+  line-height: 30px;
+  color: #333333;
 }
-.hero_content h2{
+
+.hero_content h2 {
   font-size: 40px;
   line-height: 45px;
-  
 }
-.hero_content h4{
+
+.hero_content h4 {
   font-size: 20px;
 }
-.hero_content p{
+
+.hero_content p {
   font-size: 15px;
 }
-.hero_content button{
+
+.hero_content button {
   border: none;
   border-radius: 15px;
   margin-top: 50px;
@@ -93,10 +106,12 @@ body{
   cursor: pointer;
   background-color: rgb(47, 47, 209);
 }
-.intro_section{
+
+.intro_section {
   background-color: white;
 }
-.intro_text{
+
+.intro_text {
   padding: 20px;
   margin-top: 60px;
   text-align: center;
@@ -104,101 +119,120 @@ body{
   font-size: 18px;
   line-height: 35px;
 }
-.intro_feature{
+
+.intro_feature {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
   padding: 30px;
   gap: 15px;
   margin-top: 50px;
 }
-.box{
+
+.box {
   height: 450px;
 }
-.box img{
+
+.box img {
   width: 100%;
   height: 250px;
 }
-.box p{
+
+.box p {
   padding: 30px;
   text-align: center;
   color: #333333;
 }
-.testimonial{
+
+.testimonial {
   background-color: #e6e6fa;
   height: 650px;
   padding: 70px;
-  
 }
-.test{
+
+.test {
   display: flex;
   gap: 40px;
   justify-content: center;
 }
-.testimonial h2{
+
+.testimonial h2 {
   text-align: center;
   color: #333333;
   margin-top: 40px;
 }
-.testimonial_div{
+
+.testimonial_div {
   display: flex;
   padding: 30px;
   margin-top: 20px;
   justify-content: center;
-  
 }
-.testimonial_div div{
+
+.testimonial_div div {
   width: 450px;
   height: 500px;
 }
-.testimonial_div h3{
+
+.testimonial_div h3 {
   text-align: center;
   color: #333333;
   font-size: 20px;
 }
-.testimonial_div p{
+
+.testimonial_div p {
   text-align: center;
 }
-.testimonial img{
+
+.testimonial img {
   width: 100%;
   height: 300px;
-  border-top-left-radius:20px;
+  border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
-.hidden{
+
+.hidden {
   display: none;
 }
-.support{
+
+.support {
   height: 350px;
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 50px;
   padding: 100px;
 }
-.col-75 input,.col-75 textarea{
+
+.col-75 input,
+.col-75 textarea {
   padding: 5px;
   width: 300px;
   border: 1px solid #ccc;
   border-radius: 4px;
   resize: vertical;
 }
-.col-75 input:focus{
+
+.col-75 input:focus {
   background-color: rgb(47, 47, 209);
   color: white;
 }
-.row label{
+
+.row label {
   padding: 12px 12px 12px 0;
   display: inline-block;
   color: #333333;
 }
-.helpDesk{
+
+.helpDesk {
   height: 420px;
   max-width: 380px;
   margin-left: 50px;
 }
-.helpDesk h2{
+
+.helpDesk h2 {
   color: #333333;
 }
-.helpDesk button{
+
+.helpDesk button {
   margin-top: 25px;
   width: 100px;
   padding: 7px;
@@ -206,33 +240,129 @@ body{
   background-color: rgb(47, 47, 209);
   color: rgb(239, 235, 235);
 }
-.contact{
+
+.contact {
   height: 420px;
   max-width: 380px;
   margin-left: 50px;
   margin-top: 10px;
 }
-.message{
+
+.message {
   margin-top: -120px;
   margin-left: 130px;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   background-color: #d4edda;
   border: 1px solid #c3e6cb;
   color: #155724;
   padding: 10px;
 }
-.contact{
+
+.contact {
   font-size: 15px;
   font-weight: 600;
   color: #333333;
 }
-.contact-1{
+
+.contact-1 {
   display: flex;
   gap: 10px;
   cursor: pointer;
 }
-.contact_icon{
+
+.contact_icon {
   color: rgb(47, 47, 209);
   font-size: 25px;
   padding: 8px;
 }
+
+
+@media only screen and (max-width: 1100px) {
+  .nav-bar {
+    width: 100%;
+    
+  }
+
+  .menu {
+    gap: 15px;
+    font-size: 13px;
+  }
+
+  .hero_content {
+    padding: 100px;
+    width: 600px;
+  }
+
+  .hero_content h2 {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .hero_content h4 {
+    font-size: 18px;
+  }
+
+  .intro_text {
+    margin-top: 40px;
+    font-size: 16px;
+    line-height: 30px;
+  }
+
+  .intro_feature {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 20px;
+  }
+
+  .testimonial {
+    padding: 60px;
+  }
+
+  .testimonial_div {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonial_div div {
+    width: 80%;
+    height: auto;
+  }
+
+  .testimonial img {
+    border-radius: 0;
+  }
+
+  .support,
+  .contact {
+    padding: 40px;
+  }
+
+  .col-75 input,
+  .col-75 textarea {
+    width: calc(100% - 20px);
+  }
+
+  .helpDesk,
+  .contact {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width:768px){
+  .nav-bar {
+    width: 100%;
+    margin-left:-3% ;
+  }
+
+  .menu {
+    width: 80%;
+    gap: 15px;
+    font-size: 13px;
+  }
+  .container,.overlay{
+    width:800px;
+  }
+}
+
+
+
+
