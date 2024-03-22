@@ -14,9 +14,9 @@ const AllCourses = () => {
 
     const [selectedCourse, setSelectedCourse] = useState(null);
 
-    const handleCourseClick = (course) => {
-        setSelectedCourse(course);
-    };
+    // const handleCourseClick = (course) => {
+    //     setSelectedCourse(course);
+    // };
 
     const handleGoBack = () => {
         setSelectedCourse(null);
@@ -123,9 +123,9 @@ const AllCourses = () => {
             <div>
                 <h2 style={{ padding: '30px', color: '#333333', textAlign: 'center', marginBottom: '40px' }}>Enroll And Begin Your Learning Journey</h2>
                 <div className="courses" style={{ display: "grid", gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px' }}>
-                    {courses.map((course, index) => (
+                    {/* {courses.map((course, index) => (
                         <UserCourseCard key={index} course={course} onClick={handleCourseClick} />
-                    ))} */}
+                    ))}  */}
                     {getCourseLenght()}
                 </div>
             </div>

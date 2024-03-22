@@ -9,7 +9,9 @@ import {
 import EducationAbi from "../../../../contract/EducationAbi.json";
 import axios from "axios";
 import LoadingIcon from "../../LoadingIcon"
-
+import useLoading from "../../../../hooks/useLoading"
+import useNotification from "../../../../hooks/useNotification"
+import { toast } from "react-toastify"
 
 const UserCourseCard = ({  id }) => {
 
@@ -37,6 +39,8 @@ const UserCourseCard = ({  id }) => {
     "Blockchain Integration with IoT": "blockchain_iot.jpg",
     "Web3.js Advanced Techniques": "web3js_advanced.jpg",
   };
+  
+  const { isLoading, startLoading, stopLoading } = useLoading();
 
 console.log(enrollerror);
 
@@ -103,27 +107,21 @@ console.log(enrollerror);
   console.log(ipfsImageUrl);
 
   const handleEnrollCourse = async() =>{
+    startLoading()
+
     try {
       
       const result = await writeContractAsync(simulateEnroll?.request)
       console.log(result);
+      toast.success("Successfully enroll the course")
+      stopLoading()
     } catch (error) {
       console.log(error);
+      toast.error("Failed to enroll the course, User already enroll")
     }
   }
 
-  // useEffect(() => {
-  //     const storedEnrollmentStatus = localStorage.getItem(course.name);
-  //     if (storedEnrollmentStatus) {
-  //         setEnrolled(storedEnrollmentStatus === 'enrolled');
-  //     }
-  // }, [course.name]);
-
-  // const handleEnroll = () => {
-  //   setEnrolled(true);
-  //   localStorage.setItem(course.name, "enrolled");
-  // };
-  // console.log(fetchResult[0]);
+ 
 
   return (
     <div className="user-course-card">
@@ -132,7 +130,9 @@ console.log(enrollerror);
         alt={courseData.title}
         // onClick={() => onClick(course)}
       /> */}
-      <div className="video-wrapper" style={{marginLeft:'0%',marginTop:'40px'}}>
+
+      {/* <p className=" text-red-800">New edff</p> */}
+      <div className="video-wrapper" style={{marginLeft:'0%', marginTop: '10px'}}>
             <iframe
               width="300"
               height="200"
@@ -159,10 +159,10 @@ console.log(enrollerror);
             border: "none",
             borderRadius: "4px",
             cursor: "pointer",
-          }}
-          onClick={handleEnrollCourse}
+          }} 
+          onClick={handleEnrollCourse} className=""
         >
-          Enroll
+          { loading && <LoadingIcon />} Enroll
         </button>
       
         <button

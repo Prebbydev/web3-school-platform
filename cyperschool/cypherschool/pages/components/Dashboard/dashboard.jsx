@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaArrowUp } from 'react-icons/fa';
-import './dashboard.css';
 import Greeting from '../../components/Greetings/greetings';
 import PerformanceAnalysis from '../../components/PerformanceAnalysis/performance';
 import Quotes from '../Quotes/quotes';

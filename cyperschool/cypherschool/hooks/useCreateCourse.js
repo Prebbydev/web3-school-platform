@@ -4,6 +4,7 @@ import { useWriteContract, useSimulateContract, useAccount } from "wagmi"
 import EducationAbi from "../contract/EducationAbi.json"
 import useLoading from "./useLoading"
 import useNotification from './useNotification'
+// import { toast } from "react-toastify"
 
 
 const client = new NFTStorage({ token: process.env.NEXT_PUBLIC_NFT_KEY ?? ""})
@@ -23,8 +24,8 @@ courseImageVideo }) => {
 // uploadVideo(videoData, 'My Video NFT', 'This is a description of my video NFT.');
 
   const uploadNFTStoarge = useCallback(async () => {
-    startLoading();
-    clearNotification();
+    // startLoading();
+    // clearNotification();
     try {
         const videoFile = new File([courseImageVideo], 'metadata-image', { type: 'image/png' });
       const response = await client.store({
@@ -33,9 +34,10 @@ courseImageVideo }) => {
         image: videoFile,
         
       });
+      toast.success("Uploading Course waiting for metamask to pop up")
       setSuccessNotification("Succefully upload to nft storage")
       console.log(response);
-      stopLoading()
+      // stopLoading()
       return response
   }catch( error) {
     console.log(error);

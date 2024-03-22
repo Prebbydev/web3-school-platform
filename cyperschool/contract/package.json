@@ -1,0 +1,24 @@
+{
+  "name": "contract",
+  "version": "1.0.0",
+  "description": "deployingt0 L2",
+  "main": "index.js",
+  "author": "cypher school",
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn hardhat compile",
+    "exec": "hardhat run scripts/exec.js --network l2"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "hardhat": "2.20.1"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.2",
+    "arb-shared-dependencies": "^1.0.0",
+    "dotenv": "^16.4.5",
+    "ethers": "5.7.2",
+    "i": "^0.3.7",
+    "npm": "^10.5.0"
+  }
+}

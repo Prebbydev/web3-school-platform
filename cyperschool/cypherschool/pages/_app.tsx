@@ -20,12 +20,13 @@ import '../styles/login.css';
 import "../styles/courseCard.css";
 import "../styles/forgotPassWord.css";
 import type { AppProps } from 'next/app';
-
+import "react-toastify/dist/ReactToastify.css";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { WagmiProvider, createConfig, http } from 'wagmi';
 import {
   arbitrumSepolia
 } from 'wagmi/chains';
+import { ToastContainer } from 'react-toastify';
 import { getDefaultConfig, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import { internal_estimateMaxPriorityFeePerGas } from 'viem/_types/actions/public/estimateMaxPriorityFeePerGas';
 import { injected } from 'wagmi/connectors' 
@@ -55,6 +56,18 @@ function MyApp({ Component, pageProps }: AppProps) {
     <WagmiProvider config={confiG}>
       <QueryClientProvider client={client}>
         <RainbowKitProvider>
+        <ToastContainer
+          position="top-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+          />
           <Component {...pageProps} />
         </RainbowKitProvider>
       </QueryClientProvider>

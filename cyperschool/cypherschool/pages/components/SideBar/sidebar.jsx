@@ -1,9 +1,8 @@
-// Sidebar.js
 import React from 'react';
-import '../SideBar/sidebar.css';
 import { AiOutlineDashboard, AiOutlineUser,AiOutlineBook,AiOutlineBell,AiOutlineLogout } from 'react-icons/ai';
 import { FaUsers } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import Link from 'next/link'
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 const Sidebar = ({ onSectionChange }) => {
   const handleSectionChange = (section) => {
@@ -39,9 +38,12 @@ const Sidebar = ({ onSectionChange }) => {
           <div><li onClick={() => handleSectionChange('notification')}>Notification</li></div>
         </div>
         <div className='dash'>
+         <ConnectButton />
+        </div>
+        <div className='dash'>
           <div className='dash_icon'><AiOutlineLogout/> </div>
           <span className='tooltip'>Logout</span>
-          <Link to="/" style={{textDecoration:"none"}}>
+          <Link href="/" style={{textDecoration:"none"}}>
           <div>
              <li style={{color:"#333333"}} >
               Logout 
