@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import useValidation from "../../hooks/useValidation";
 import LoadingIcon from "../LoadingIcon"
 
+
 function SignUpModal({ toggleModal, openLoginModal }) {
     const [formData, setFormData] = useState({
         email: '',
@@ -65,6 +66,9 @@ function SignUpModal({ toggleModal, openLoginModal }) {
     password
   })
 
+  console.log(isLoading)
+  console.log(notification)
+
 
     const handleSubmitSignUp = async (e) => {
         e.preventDefault();
@@ -107,14 +111,14 @@ function SignUpModal({ toggleModal, openLoginModal }) {
                                 <input type="email" id="email" name="email" value={formData.email} onChange={handleInputChange} required />
                             </div>
                         </div>
-                        <div className="signIn">
+                        {/* <div className="signIn">
                             <div className="signLabel">
                                 <FaUser style={{ fontSize: '18px' }} /> <label htmlFor="username">Username</label>
                             </div>
                             <div className="signInput">
                                 <input type="text" id="username" name="username" value={formData.username} onChange={handleInputChange} required />
                             </div>
-                        </div>
+                        </div> */}
                         <div className="signIn">
                             <div className="signLabel">
                                 <AiOutlineLock style={{ fontSize: '18px' }} /> <label htmlFor="password">Password</label>
@@ -124,17 +128,18 @@ function SignUpModal({ toggleModal, openLoginModal }) {
                                 <p onClick={toggleShowPassword}>{showPassword ? 'Hide' : 'Show'}</p>
                             </div>
                         </div>
-                        {error && <p className="signUpmessage">{error}</p>}
-                        {successMessage && <p className="message">{successMessage}</p>}
+                        {/* {error && <p className="signUpmessage">{error}</p>}
+                        {successMessage && <p className="message">{successMessage}</p>} */}
 
-                        <button type="submit" disabled={isLoading}>
+                        <button type="submit" >
                             {isLoading ? 'Signing Up...' : 'Sign Up'}
+                           
                         </button>
-                        <div className="logUser">
+                        {/* <div className="logUser">
                             <p>
                                 Already have an account? <i onClick={handleLoginClick}>Log In</i>
                             </p>
-                        </div>
+                        </div> */}
                     </form>
                 </div>
             </div>

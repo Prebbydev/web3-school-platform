@@ -15,7 +15,7 @@ const Home = () => {
     setCurrentSection(section);
   };
   return (
-    // <AuthMiddleware>
+    <AuthMiddleware>
 
     <div className="dashboard-container">
       <Sidebar onSectionChange={handleSectionChange} />
@@ -29,7 +29,7 @@ const Home = () => {
 
       </div>
     </div>
-   // </AuthMiddleware>
+   </AuthMiddleware>
   );
 };
 

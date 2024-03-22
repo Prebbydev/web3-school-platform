@@ -11,6 +11,7 @@ import {GrLocation} from 'react-icons/gr';
 import LoginModal from "./../components/LoginModal/login"
 import SignUpModal from "./../components/SignupModal/signup"
 import useAuthenticated from "../hooks/useAuthentication"
+
 const Home: NextPage = () => {
   //function for Testimonial change
   const [currentIndex,setCurrentIndex]= useState(0);
@@ -116,8 +117,8 @@ if (typeof window !== "undefined") {
           <div className='hero_section'>
               <div className='overlay'></div>
               <div className='hero_content'>
-                   <h2>Empower Your Education with <i>Wellsy</i></h2> 
-                   <h4>Unlock your potential with online learning</h4>
+                   <h2>Empower Your Education with <i>Cyperschool</i></h2> 
+                   <h4>Unlock your potential with web3 online learning</h4>
                    <p>Join thousands of students worldwide in achieving academic success through flexible,interactive 
                       and engaging online courses.
                    </p>
@@ -126,9 +127,9 @@ if (typeof window !== "undefined") {
           </div>
           <div className='intro_section' id='about-us'>
               <div className='intro_text'>
-                  <h5>Welcome to Wellsy Academy, your gateway to a world of knowledge and opportunity.</h5>
+                  <h5>Welcome to Cyperschool Academy, your gateway to a world web3 knowledge and opportunity.</h5>
                   <p>At Wellsy Academy, we believe in empowering learners of all ages to reach their
-                  full potential through quality education and innovative learning experiences. 
+                  full potential through quality education and innovative learning experiences in blockchain space. 
                   Whether you are a student,professional or lifelong learner,our diverse range of courses and resources
                   are designed to cater to your unigue learning goals and interests.
                   </p>
