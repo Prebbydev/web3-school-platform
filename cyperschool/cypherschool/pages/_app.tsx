@@ -20,12 +20,13 @@ import "../styles/forgotPassWord.css"
 import type { AppProps } from 'next/app';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { WagmiProvider } from 'wagmi';
+import { WagmiProvider, createConfig, http } from 'wagmi';
 import {
   arbitrumSepolia
 } from 'wagmi/chains';
 import { getDefaultConfig, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import { internal_estimateMaxPriorityFeePerGas } from 'viem/_types/actions/public/estimateMaxPriorityFeePerGas';
+import { injected } from 'wagmi/connectors' 
 
 const config = getDefaultConfig({
 	appName: 'Cypher School',
@@ -34,11 +35,22 @@ const config = getDefaultConfig({
 	ssr: true, // If your dApp uses server side rendering (SSR)
 });
 
+const confiG = createConfig({
+  chains: [arbitrumSepolia],
+  connectors: [injected()], 
+  ssr: true, 
+  transports: {
+    [arbitrumSepolia.id]: http(),
+    
+  },
+})
+
+
 const client = new QueryClient();
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <WagmiProvider config={config}>
+    <WagmiProvider config={confiG}>
       <QueryClientProvider client={client}>
         <RainbowKitProvider>
           <Component {...pageProps} />

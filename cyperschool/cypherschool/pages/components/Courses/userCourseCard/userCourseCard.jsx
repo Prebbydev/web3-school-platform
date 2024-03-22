@@ -1,69 +1,188 @@
-import React, { useState, useEffect } from 'react';
-// import './userCourseCard.css';
-// import img1 from '../../../components/AllCourses/courseImages/blockchain_fundamentals.jpg';
-// import img2 from '../../../components/AllCourses/courseImages/ethereum_development.jpg';
-// import img3 from '../../../components/AllCourses/courseImages/web3js_essentials.jpg';
-// import img4 from '../../../components/AllCourses/courseImages/defi_fundamentals.jpg';
-// import img5 from '../../../components/AllCourses/courseImages/solidity_programming.jpg';
-// import img6 from '../../../components/AllCourses/courseImages/blockchain_security.jpg';
-// import img7 from '../../../components/AllCourses/courseImages/nft_creation.jpg';
-// import img8 from '../../../components/AllCourses/courseImages/decentralized_identity.jpg';
-// import img9 from '../../../components/AllCourses/courseImages/supply_chain_blockchain.jpg';
-// import img10 from '../../../components/AllCourses/courseImages/crypto_economics.jpg';
-// import img11 from '../../../components/AllCourses/courseImages/smart_contract_auditing.jpg';
-// import img12 from '../../../components/AllCourses/courseImages/blockchain_governance.jpg';
-// import img13 from '../../../components/AllCourses/courseImages/hyperledger_fabric.jpg';
-// import img14 from '../../../components/AllCourses/courseImages/blockchain_iot.jpg';
-// import img15 from '../../../components/AllCourses/courseImages/web3js_advanced.jpg';
+import React, { useState, useEffect, useCallback } from "react";
+import {
+  useWriteContract,
+  useSimulateContract,
+  useAccount,
+  useReadContract,
+  useCall,
+} from "wagmi";
+import EducationAbi from "../../../../contract/EducationAbi.json";
+import axios from "axios";
+import LoadingIcon from "../../LoadingIcon"
 
-const UserCourseCard = ({ course, onClick }) => {
-    const imageUrls = {
-        'Blockchain Fundamentals': 'blockchain_fundamentals.jpg',
-        'Ethereum Development': 'ethereum_development.jpg',
-        'Web3.js Essentials': 'web3js_essentials.jpg',
-        'DeFi Fundamentals': 'defi_fundamentals.jpg',
-        'Solidity Programming': 'solidity_programming.jpg',
-        'Blockchain Security': 'blockchain_security.jpg',
-        'NFT Creation and Trading': 'nft_creation.jpg',
-        'Decentralized Identity': 'decentralized_identity.jpg',
-        'Blockchain for Supply Chain': 'supply_chain_blockchain.jpg',
-        'Crypto Economics': 'crypto_economics.jpg',
-        'Smart Contract Auditing': 'smart_contract_auditing.jpg',
-        'Blockchain Governance': 'blockchain_governance.jpg',
-        'Hyperledger Fabric Dev': 'hyperledger_fabric.jpg',
-        'Blockchain Integration with IoT': 'blockchain_iot.jpg',
-        'Web3.js Advanced Techniques': 'web3js_advanced.jpg'
+
+const UserCourseCard = ({  id }) => {
+
+  const { writeContractAsync } = useWriteContract()
+  const { data: simulateEnroll, error: enrollerror } = useSimulateContract({
+    abi: EducationAbi.abi,
+    address: EducationAbi.address,
+    functionName: "enrollCourse",
+    args: [id],
+  });
+  const imageUrls = {
+    "Blockchain Fundamentals": "blockchain_fundamentals.jpg",
+    "Ethereum Development": "ethereum_development.jpg",
+    "Web3.js Essentials": "web3js_essentials.jpg",
+    "DeFi Fundamentals": "defi_fundamentals.jpg",
+    "Solidity Programming": "solidity_programming.jpg",
+    "Blockchain Security": "blockchain_security.jpg",
+    "NFT Creation and Trading": "nft_creation.jpg",
+    "Decentralized Identity": "decentralized_identity.jpg",
+    "Blockchain for Supply Chain": "supply_chain_blockchain.jpg",
+    "Crypto Economics": "crypto_economics.jpg",
+    "Smart Contract Auditing": "smart_contract_auditing.jpg",
+    "Blockchain Governance": "blockchain_governance.jpg",
+    "Hyperledger Fabric Dev": "hyperledger_fabric.jpg",
+    "Blockchain Integration with IoT": "blockchain_iot.jpg",
+    "Web3.js Advanced Techniques": "web3js_advanced.jpg",
+  };
+
+console.log(enrollerror);
+
+  const [enrolled, setEnrolled] = useState(false);
+  const [courseData, setCourseData] = useState(null);
+  const [data, setData] = useState(null);
+  const [response, setResponse] = useState(null)
+  const [loading, setLoading] = useState(true);
+  const { address } = useAccount();
+
+  const { data: fetchResult } = useReadContract({
+    abi: EducationAbi.abi,
+    address: EducationAbi.address,
+    functionName: "getCoursesDetails",
+    args: [id],
+  });
+
+  const getCoursesDetails = useCallback(() => {
+    if (!fetchResult) return null;
+    setCourseData({
+      title: fetchResult[0],
+      courseURL: fetchResult[1],
+      SubmitLink: fetchResult[2],
+      rewards: fetchResult[3],
+      credits: Number(fetchResult[4]),
+      isCompleted: Number(fetchResult[5]),
+      eroll_Course: fetchResult[6],
+    });
+    setData(fetchResult[1]);
+    setLoading(false);
+  }, [fetchResult]);
+
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(data);
+        console.log(response);
+        setResponse(response?.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
     };
 
-    const [enrolled, setEnrolled] = useState(false);
+    fetchData();
+  }, [data]);
 
-    useEffect(() => {
-        const storedEnrollmentStatus = localStorage.getItem(course.name);
-        if (storedEnrollmentStatus) {
-            setEnrolled(storedEnrollmentStatus === 'enrolled');
-        }
-    }, [course.name]);
+  console.log(data);
+  console.log(response);
+  console.log(fetchResult);
+ 
 
-    const handleEnroll = () => {
-        setEnrolled(true);
-        localStorage.setItem(course.name, 'enrolled');
-    };
+  useEffect(() => {
+    getCoursesDetails();
+  }, [getCoursesDetails]);
 
-    return (
-        <div className="user-course-card" >
-            <img src={imageUrls[course.name]} alt={course.name} onClick={() => onClick(course)}/>
-            <h2 onClick={() => onClick(course)}>{course.name}</h2>
-            <p>{course.description}</p>
+  if (!courseData) return null;
+  console.log(loading);
 
-            {enrolled ? 
-                <button disabled style={{ padding: '10px 20px', backgroundColor: '#333333',marginLeft:'20px', color: '#fff',border: 'none',
-                borderRadius: '4px', cursor: 'pointer' }} >Enrolled</button>
-                :
-                <button onClick={handleEnroll} style={{ padding: '10px 20px', backgroundColor: '#3A306C',marginLeft:'20px', color: '#fff',border: 'none',
-                borderRadius: '4px', cursor: 'pointer' }} >Enroll</button>
-            }
-        </div>
-    );
+  
+
+  console.log(fetchResult);
+  const ipfsImageUrl = `https://ipfs.io/ipfs/${response?.image.replace('ipfs://', '')}`
+  console.log(ipfsImageUrl);
+
+  const handleEnrollCourse = async() =>{
+    try {
+      
+      const result = await writeContractAsync(simulateEnroll?.request)
+      console.log(result);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  // useEffect(() => {
+  //     const storedEnrollmentStatus = localStorage.getItem(course.name);
+  //     if (storedEnrollmentStatus) {
+  //         setEnrolled(storedEnrollmentStatus === 'enrolled');
+  //     }
+  // }, [course.name]);
+
+  // const handleEnroll = () => {
+  //   setEnrolled(true);
+  //   localStorage.setItem(course.name, "enrolled");
+  // };
+  // console.log(fetchResult[0]);
+
+  return (
+    <div className="user-course-card">
+      {/* <img
+        src={imageUrls}
+        alt={courseData.title}
+        // onClick={() => onClick(course)}
+      /> */}
+      <div className="video-wrapper" style={{marginLeft:'0%',marginTop:'40px'}}>
+            <iframe
+              width="300"
+              height="200"
+              src={response?.name}
+              
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+      <h2 
+      // onClick={() => onClick(course)}
+      >{courseData.title}</h2>
+      <p>{response?.description}</p>
+      {/* <p>{courseData?.rewards}</p> */}
+
+      
+        <button
+          style={{
+            padding: "10px 20px",
+            backgroundColor: "#333333",
+            marginLeft: "20px",
+            color: "#fff",
+            border: "none",
+            borderRadius: "4px",
+            cursor: "pointer",
+          }}
+          onClick={handleEnrollCourse}
+        >
+          Enroll
+        </button>
+      
+        <button
+          // onClick={handleEnroll}
+          style={{
+            padding: "10px 20px",
+            backgroundColor: "#3A306C",
+            marginLeft: "20px",
+            color: "#fff",
+            border: "none",
+            borderRadius: "4px",
+            cursor: "pointer",
+          }}
+        >
+          <a href="/course/2">
+          Enrolled
+          </a>
+        </button>
+          </div>
+  );
 };
 
 export default UserCourseCard;

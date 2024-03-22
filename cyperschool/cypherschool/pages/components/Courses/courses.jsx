@@ -1,6 +1,14 @@
 import React,{useState} from 'react';
 import UserCourseCard from './userCourseCard/userCourseCard';
 import CoursePlaylist from './coursePlaylist/coursePlaylist';
+import {
+    useWriteContract,
+    useSimulateContract,
+    useAccount,
+    useReadContract,
+    useCall,
+  } from "wagmi";
+  import EducationAbi from "../../../contract/EducationAbi.json"
 
 const AllCourses = () => {
 
@@ -14,6 +22,8 @@ const AllCourses = () => {
         setSelectedCourse(null);
     };
 
+
+    
 
     const courses = [
         {
@@ -78,6 +88,27 @@ const AllCourses = () => {
         },
     ];
 
+    const { data: courseLenght } = useReadContract({
+        abi: EducationAbi.abi,
+        address: EducationAbi.address,
+        functionName: "totalCourses",
+        args: [],
+      });
+
+      console.log("this is the number of course ", courseLenght)
+
+      const courseLen = courseLenght ? Number(courseLenght.toString()) : 0;
+      console.log(courseLen);
+
+      const getCourseLenght = () => {
+        if(!courseLen) return null;
+        const courses = []
+        for (let i = 0; i < courseLen; i++) {
+            courses.push(<UserCourseCard key={i} id={i}/>)
+      }
+      return courses;
+    }
+
     return (
         <div>
         {selectedCourse ? (
@@ -90,9 +121,10 @@ const AllCourses = () => {
             <div>
                 <h2 style={{ padding: '30px', color: '#333333', textAlign: 'center', marginBottom: '40px' }}>Enroll And Begin Your Learning Journey</h2>
                 <div className="courses" style={{ display: "grid", gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px' }}>
-                    {courses.map((course, index) => (
+                    {/* {courses.map((course, index) => (
                         <UserCourseCard key={index} course={course} onClick={handleCourseClick} />
-                    ))}
+                    ))} */}
+                    {getCourseLenght()}
                 </div>
             </div>
         )}
