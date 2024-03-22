@@ -108,10 +108,6 @@ contract EducationalPlatform is AccessControl {
 
     
 
-
-
-    
-
     function enrollCourse(uint256 _courseId) external {
     require(!enrolledStudents[msg.sender], "Student is already enrolled in the course");
     require(_courseId <= totalCourses, "Invalid Course ID");
