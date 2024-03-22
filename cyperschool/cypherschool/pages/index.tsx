@@ -2,14 +2,14 @@ import { ConnectButton } from '@rainbow-me/rainbowkit';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 // import '../styles/UserDashboard.css'
-import Sidebar from "./components/SideBar/sidebar"
+import Sidebar from "./../components/SideBar/sidebar"
 import { useState } from 'react';
 import Link from 'next/link'
 import {FaChevronLeft,FaChevronRight,FaQuoteLeft,FaQuoteRight,FaPhone} from 'react-icons/fa';
 import {FiMail} from 'react-icons/fi';
 import {GrLocation} from 'react-icons/gr';
-import LoginModal from "./components/LoginModal/login"
-import SignUpModal from "./components/SignupModal/signup"
+import LoginModal from "./../components/LoginModal/login"
+import SignUpModal from "./../components/SignupModal/signup"
 import useAuthenticated from "../hooks/useAuthentication"
 const Home: NextPage = () => {
   //function for Testimonial change

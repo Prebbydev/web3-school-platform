@@ -4,12 +4,11 @@ import {
     useSimulateContract,
     useAccount,
     useReadContract,
-    useCall,
   } from "wagmi";
   import EducationAbi from "../../contract/EducationAbi.json"
   import axios from "axios"
   import {useRouter} from "next/router";
-import LoadingIcon from "../components/LoadingIcon"
+import LoadingIcon from "../../components/LoadingIcon"
 const getCoursesDetails = ({ params }) => {
   const { query } = useRouter();
   console.log(query);
@@ -17,7 +16,7 @@ const [submission, setSubmission] = useState('')
   const { data: simulateContract, error: enrollerror, isLoading: simulateLoading } = useSimulateContract({
     abi: EducationAbi.abi,
     address: EducationAbi.address,
-    functionName: "submitAssignment",
+    functionName: "submitAssignments",
     args: [query?.id, submission],
     // account: address
   });
@@ -78,7 +77,7 @@ const [submission, setSubmission] = useState('')
       const result = await writeContractAsync(simulateContract?.request)
       console.log(result);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   }
 

@@ -6,11 +6,11 @@ import {
   useReadContract,
   useCall,
 } from "wagmi";
-import EducationAbi from "../../../../contract/EducationAbi.json";
+import EducationAbi from "../../../contract/EducationAbi.json";
 import axios from "axios";
 import LoadingIcon from "../../LoadingIcon"
-import useLoading from "../../../../hooks/useLoading"
-import useNotification from "../../../../hooks/useNotification"
+import useLoading from "../../../hooks/useLoading"
+import useNotification from "../../../hooks/useNotification"
 import { toast } from "react-toastify"
 
 const UserCourseCard = ({  id }) => {

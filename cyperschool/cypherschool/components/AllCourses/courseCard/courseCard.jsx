@@ -1,19 +1,5 @@
 import React from 'react';
-import img1 from '../courseImages/blockchain_fundamentals.jpg';
-import img2 from '../courseImages/ethereum_development.jpg';
-import img3 from '../courseImages/web3js_essentials.jpg';
-import img4 from '../courseImages/defi_fundamentals.jpg';
-import img5 from '../courseImages/solidity_programming.jpg';
-import img6 from '../courseImages/blockchain_security.jpg';
-import img7 from '../courseImages/nft_creation.jpg';
-import img8 from '../courseImages/decentralized_identity.jpg';
-import img9 from '../courseImages/supply_chain_blockchain.jpg';
-import img10 from '../courseImages/crypto_economics.jpg';
-import img11 from '../courseImages/smart_contract_auditing.jpg';
-import img12 from '../courseImages/blockchain_governance.jpg';
-import img13 from '../courseImages/hyperledger_fabric.jpg';
-import img14 from '../courseImages/blockchain_iot.jpg';
-import img15 from '../courseImages/web3js_advanced.jpg';
+
 
 const CourseCard = ({ course, openModal }) => {
     const imageUrls = {

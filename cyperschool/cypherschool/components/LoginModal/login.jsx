@@ -3,10 +3,10 @@ import { AiOutlineLock } from "react-icons/ai";
 import { FaUser } from "react-icons/fa";
 import SignUpModal from "../SignupModal/signup";
 import ForgotPassword from "../ForgotPassWord/forgotPassWord";
-import useLogin from "../../../hooks/useLogin";
+import useLogin from "../../hooks/useLogin";
 import { useRouter } from "next/router";
-import useValidation from "../../../hooks/useValidation";
-import { validateEmail, validatePassword } from "../../../helpers/validation";
+import useValidation from "../../hooks/useValidation";
+import { validateEmail, validatePassword } from "../../helpers/validation";
 import LoadingIcon from "../LoadingIcon"
 function LoginModal({ toggleModal }) {
   const [formData, setFormData] = useState({

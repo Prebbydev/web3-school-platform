@@ -3,10 +3,10 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { AiOutlineMail, AiOutlineLock } from 'react-icons/ai';
 import { FaUser } from 'react-icons/fa';
 import LoginModal from '../LoginModal/login';
-import useRegister from "../../../hooks/useRegister"
-import { validateEmail, validatePassword } from "../../../helpers/validation";
+import useRegister from "../../hooks/useRegister"
+import { validateEmail, validatePassword } from "../../helpers/validation";
 import { useRouter } from "next/router";
-import useValidation from "../../../hooks/useValidation";
+import useValidation from "../../hooks/useValidation";
 import LoadingIcon from "../LoadingIcon"
 
 function SignUpModal({ toggleModal, openLoginModal }) {
@@ -60,7 +60,10 @@ function SignUpModal({ toggleModal, openLoginModal }) {
   const email = formData.email
   const password = formData.password
 
-  const { register, notification, isLoading } = useRegister()
+  const { register, notification, isLoading } = useRegister({ 
+    email, 
+    password
+  })
 
 
     const handleSubmitSignUp = async (e) => {

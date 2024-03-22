@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import CourseCard from '../components/AllCourses/courseCard/courseCard';
-import CourseModal from '../components/AllCourses/courseModal/courseModal';
+import CourseCard from '../../components/AllCourses/courseCard/courseCard';
+import CourseModal from '../../components/AllCourses/courseModal/courseModal';
 import Link from "next/link";
 
 const AllCourses = () => {

@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import Preloader from "../pages/components/Preloader"
+import Preloader from "../components/Preloader"
 import useAuthenticated from "../hooks/useAuthentication"
 
 const NotAuthMiddleware = ({ children }) => {

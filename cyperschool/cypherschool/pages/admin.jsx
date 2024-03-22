@@ -3,9 +3,9 @@ import EducationAbi from "../contract/EducationAbi.json";
 import { NFTStorage } from "nft.storage";
 import { useWriteContract, useSimulateContract, useAccount, useReadContract  } from "wagmi";
 import useCreateCourse from "../hooks/useCreateCourse";
-import  userCreateCourse from "../hooks/useCreatecourese";
+// import  userCreateCourse from "../hooks/useCreatecourese";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import WagmiWrapperLayout from "../layout/Wagmit";
+
 
 const client = new NFTStorage({ token: process.env.NEXT_PUBLIC_NFT_KEY ?? "" });
 const Admin = () => {

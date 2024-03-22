@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import UserCourseCard from '../Courses/userCourseCard/userCourseCard';
-import CoursePlaylist from '../Courses/coursePlaylist/coursePlaylist';
+// import CoursePlaylist from '../Courses/coursePlaylist/coursePlaylist';
 import {
     useWriteContract,
     useSimulateContract,
@@ -8,7 +8,7 @@ import {
     useReadContract,
     useCall,
   } from "wagmi";
-  import EducationAbi from "../../../contract/EducationAbi.json"
+  import EducationAbi from "../../contract/EducationAbi.json"
 
 const AllCourses = () => {
 
@@ -93,11 +93,10 @@ const AllCourses = () => {
         args: [],
       });
 
-      console.log("this is the number of course ", courseLenght)
+    //   console.log("this is the number of course ", courseLenght)
 
       const courseLen = courseLenght ? Number(courseLenght.toString()) : 0;
-      console.log(courseLen);
-
+      
       const getCourseLenght = () => {
         if(!courseLen) return null;
         const courses = []
@@ -109,13 +108,13 @@ const AllCourses = () => {
 
     return (
         <div>
-        {selectedCourse ? (
+        {/* {selectedCourse ? (
             <div className='courses-container' >
                 <span className='courses-span'  onClick={handleGoBack}>Home &nbsp; / &nbsp; Student's Courses  </span>
           
                 <CoursePlaylist course={selectedCourse} />
             </div>
-        ) : (
+        ) : ( */}
             <div>
                 <h2 style={{ padding: '30px', color: '#333333', textAlign: 'center', marginBottom: '40px' }}>Enroll And Begin Your Learning Journey</h2>
                 <div className="courses" style={{ display: "grid", gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px' }}>
@@ -125,7 +124,7 @@ const AllCourses = () => {
                     {getCourseLenght()}
                 </div>
             </div>
-        )}
+        {/* )} */}
     </div>
       
     );
