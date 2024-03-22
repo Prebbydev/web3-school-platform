@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link'
 import { FaArrowUp } from 'react-icons/fa';
 import Greeting from '../../components/Greetings/greetings';
 import PerformanceAnalysis from '../../components/PerformanceAnalysis/performance';
@@ -44,7 +44,7 @@ const UserDash = () => {
                     {isOnDashboard ? (
                         <span style={{ textDecoration: "none", color: "#007bff", cursor: "pointer" }} onClick={handleHomeClick}>Home</span>
                     ) : (
-                        <Link to="/user-dashboard" style={{ textDecoration: "none", color: "#007bff", cursor: "pointer" }} onClick={handleHomeClick}>Home</Link>
+                        <Link href="/user-dashboard" style={{ textDecoration: "none", color: "#007bff", cursor: "pointer" }} onClick={handleHomeClick}>Home</Link>
                     )}
                 </div>
                 <div style={{ color: "#007bff" }}>/</div>

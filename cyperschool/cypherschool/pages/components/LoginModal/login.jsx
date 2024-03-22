@@ -7,7 +7,7 @@ import useLogin from "../../../hooks/useLogin";
 import { useRouter } from "next/router";
 import useValidation from "../../../hooks/useValidation";
 import { validateEmail, validatePassword } from "../../../helpers/validation";
-
+import LoadingIcon from "../LoadingIcon"
 function LoginModal({ toggleModal }) {
   const [formData, setFormData] = useState({
     email: "",
@@ -122,7 +122,9 @@ function LoginModal({ toggleModal }) {
             </div>
             <h5 onClick={handleForgotPassClick}>Forgot password?</h5>
 
-            <button type="submit">Log In</button>
+            <button type="submit" disabled={isLoading}>
+            {isLoading ? 'Authenticating' : 'Log in'}
+            </button>
             </form>
             <div onClick={handleSignUpClick}>
               <h4>Create account</h4>

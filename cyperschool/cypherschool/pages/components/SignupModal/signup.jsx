@@ -7,7 +7,7 @@ import useRegister from "../../../hooks/useRegister"
 import { validateEmail, validatePassword } from "../../../helpers/validation";
 import { useRouter } from "next/router";
 import useValidation from "../../../hooks/useValidation";
-
+import LoadingIcon from "../LoadingIcon"
 
 function SignUpModal({ toggleModal, openLoginModal }) {
     const [formData, setFormData] = useState({
@@ -124,8 +124,8 @@ function SignUpModal({ toggleModal, openLoginModal }) {
                         {error && <p className="signUpmessage">{error}</p>}
                         {successMessage && <p className="message">{successMessage}</p>}
 
-                        <button type="submit" disabled={loading}>
-                            {loading ? 'Signing Up...' : 'Sign Up'}
+                        <button type="submit" disabled={isLoading}>
+                            {isLoading ? 'Signing Up...' : 'Sign Up'}
                         </button>
                         <div className="logUser">
                             <p>
