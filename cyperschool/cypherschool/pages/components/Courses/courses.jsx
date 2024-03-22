@@ -14,10 +14,6 @@ const AllCourses = () => {
 
     const [selectedCourse, setSelectedCourse] = useState(null);
 
-    // const handleCourseClick = (course) => {
-    //     setSelectedCourse(course);
-    // };
-
     const handleGoBack = () => {
         setSelectedCourse(null);
     };

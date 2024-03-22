@@ -84,6 +84,32 @@ contract EducationalPlatform is AccessControl {
         );
     }
 
+    function getFCoursesDetails(uint256 _index) public view returns(string memory, string memory, string memory, uint256, uint256, bool, EnrollStatus, Submission[] memory) {
+    Course storage course = courses[_index];
+    Submission[] memory submissions = new Submission[](courseEnrollments[_index].length);
+    
+    for (uint256 i = 0; i < courseEnrollments[_index].length; i++) {
+        address studentAddress = courseEnrollments[_index][i];
+        string memory submissionUrl = course.studentSubmissions[studentAddress];
+        submissions[i] = Submission(studentAddress, submissionUrl);
+    }
+    
+    return (
+        course.title,
+        course.courseURL,
+        course.SubmitLink,
+        course.rewards,
+        course.credits,
+        course.isCompleted,
+        course.enrollSatus,
+        submissions
+    );
+}
+
+    
+
+
+
     
 
     function enrollCourse(uint256 _courseId) external {
@@ -105,14 +131,6 @@ contract EducationalPlatform is AccessControl {
 }
 
     
-
-    function submitAssignment(uint256 _courseId, string memory _assignmentURL) external {
-        require(enrolledStudents[msg.sender], "Student is not enrolled in this course");
-        require(_courseId <= totalCourses && _courseId > 0, "Invalid course ID");
-        require(!courses[_courseId].isCompleted, "Course already completed");
-
-        emit AssignmentSubmitted(msg.sender, _courseId, _assignmentURL);
-    }
 
     function submitAssignments(uint256 _courseId, string memory _assignmentURL) external {
     require(enrolledStudents[msg.sender], "Student is not enrolled in this course");
@@ -176,7 +194,7 @@ contract EducationalPlatform is AccessControl {
     return submissions;
 }
 
-//     function getCourseSubmissions(uint256 _courseId) external view returns (Submission[] memory) {
+//     function getFCourseSubmissions(uint256 _courseId) external view returns (Submission[] memory) {
 //     require(_courseId <= totalCourses, "Invalid course ID");
 //     Course storage course = courses[_courseId];
 

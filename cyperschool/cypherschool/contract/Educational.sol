@@ -84,7 +84,7 @@ contract EducationalPlatform is AccessControl {
         );
     }
 
-    function getFCoursesDetails(uint256 _index) public view returns(string memory, string memory, string memory, uint256, uint256, bool, Submission[] memory) {
+    function getFCoursesDetails(uint256 _index) public view returns(string memory, string memory, string memory, uint256, uint256, bool, EnrollStatus, Submission[] memory) {
     Course storage course = courses[_index];
     Submission[] memory submissions = new Submission[](courseEnrollments[_index].length);
     
@@ -101,6 +101,7 @@ contract EducationalPlatform is AccessControl {
         course.rewards,
         course.credits,
         course.isCompleted,
+        course.enrollSatus,
         submissions
     );
 }
