@@ -54,6 +54,3 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 1. **Community-driven Development:**
    - The platform's governance model on Arbitrum allows the community to actively contribute to its development and evolution, ensuring that it meets the diverse needs of its users.
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
