@@ -38,3 +38,39 @@
     text-overflow: ellipsis;
     margin: 10px 17px 5px 15px;
 }
+
+
+@media only screen and (max-width: 1024px) {
+    .user-course-card{
+        width: 90%;
+        margin: 0 auto 30px; 
+    }
+    .user-course-card h2  {
+        font-size: 12.5px;
+    }
+    .user-course-card p{
+        font-size: 13px;
+    }
+    
+}
+
+@media only screen and (max-width: 600px) {
+    .user-course-card {
+        width: 90%; 
+        margin: 0 auto 30px; 
+    }
+
+    .user-course-card img {
+        height: 150px; 
+    }
+
+    .user-course-card h2 {
+        font-size: 16px; 
+        margin: 10px 15px; 
+    }
+
+    .user-course-card p {
+        font-size: 14px; 
+        margin: 5px 15px; 
+    }
+}

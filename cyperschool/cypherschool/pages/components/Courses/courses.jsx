@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
-import UserCourseCard from './userCourseCard/userCourseCard';
-import CoursePlaylist from './coursePlaylist/coursePlaylist';
+import UserCourseCard from '../Courses/userCourseCard/userCourseCard';
+import CoursePlaylist from '../Courses/coursePlaylist/coursePlaylist';
 import {
     useWriteContract,
     useSimulateContract,
@@ -27,9 +27,10 @@ const AllCourses = () => {
 
     const courses = [
         {
-            name: 'Blockchain Fundamentals',
-            description: 'Learn the basics of blockchain technology and its applications.',
+            name: 'Decentralized Identity',
+            description: 'Explore decentralized identity solutions and self-sovereign identity.',
         },
+        
         {
             name: 'Ethereum Development',
             description: 'Master Ethereum development, smart contracts, and DApps.',
@@ -55,9 +56,10 @@ const AllCourses = () => {
             description: 'Create and trade Non-Fungible Tokens (NFTs) on various platforms.',
         },
         {
-            name: 'Decentralized Identity',
-            description: 'Explore decentralized identity solutions and self-sovereign identity.',
+            name: 'Blockchain Fundamentals',
+            description: 'Learn the basics of blockchain technology and its applications.',
         },
+        
         {
             name: 'Blockchain for Supply Chain',
             description: 'Implement blockchain technology in supply chain management.',
@@ -79,7 +81,7 @@ const AllCourses = () => {
             description: 'Develop enterprise-grade blockchain applications with Hyperledger Fabric.',
         },
         {
-            name: 'Blockchain Integration with IoT',
+            name: 'Blockchain IoT Integration',
             description: 'Integrate blockchain technology with Internet of Things (IoT) devices.',
         },
         {
@@ -112,8 +114,8 @@ const AllCourses = () => {
     return (
         <div>
         {selectedCourse ? (
-            <div style={{marginTop:'30px'}}>
-                <span style={{ textDecoration: "none", color: "#007bff", cursor: "pointer" }} onClick={handleGoBack}>Home &nbsp; / &nbsp; Student's Courses  </span>
+            <div className='courses-container' >
+                <span className='courses-span'  onClick={handleGoBack}>Home &nbsp; / &nbsp; Student's Courses  </span>
           
                 <CoursePlaylist course={selectedCourse} />
             </div>
@@ -121,7 +123,7 @@ const AllCourses = () => {
             <div>
                 <h2 style={{ padding: '30px', color: '#333333', textAlign: 'center', marginBottom: '40px' }}>Enroll And Begin Your Learning Journey</h2>
                 <div className="courses" style={{ display: "grid", gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px' }}>
-                    {/* {courses.map((course, index) => (
+                    {courses.map((course, index) => (
                         <UserCourseCard key={index} course={course} onClick={handleCourseClick} />
                     ))} */}
                     {getCourseLenght()}

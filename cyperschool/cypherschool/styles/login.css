@@ -14,8 +14,6 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
   width: 400px;
   height: 400px;
-  
-  
 }
 .modal-content form{
   margin-left: 11%;
@@ -59,10 +57,9 @@
   display: inline-block;
   position: relative;
 }
-
 .userInput p{
   position: absolute;
-  bottom: 32%;
+  bottom: 35%;
   right:70px;
   transform: translateY(-50%);
   padding-bottom: 10px;
@@ -76,8 +73,6 @@
 .logIn{
   margin-bottom: 10px;
 }
-  
-  
 .logIn label{
   padding: 12px 12px 12px 12px;
   display: inline-block;
@@ -95,4 +90,22 @@
 .cancel:hover{
   font-size: 30px;
 }
-  
+
+@media only screen and (max-width: 1024px) {
+  .modal{
+      left:28%;
+  }
+
+}
+@media only screen and (max-width: 912px) {
+  .modal{
+      left: 27%;
+  }
+
+}
+@media only screen and (max-width: 853px) {
+  .modal{
+      left: 22%;
+  }
+
+}

@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import '../UserDashboard/UserDashboard.css'; 
+import './UserDashboard.css'; 
 import Sidebar from '../components/SideBar/sidebar';
 import Profile from './UserProfile/userpProfile';
 import Notification from './Notification/notification';

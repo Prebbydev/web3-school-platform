@@ -39,3 +39,34 @@
 .update-password-form p {
     margin-top: 10px;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .update-password-form {
+        max-width: 80%; 
+        margin: 30px auto; 
+        margin-left: 10px;
+    }
+
+    .update-password-form label {
+        margin-bottom: 10px; 
+    }
+
+    .update-password-form input[type="password"] {
+        padding: 10px; 
+        margin-bottom: 15px; 
+    }
+
+    .update-password-form button {
+        padding: 10px 20px; 
+        margin-top: 20px;
+    }
+
+    .update-password-form button:hover:not(:disabled) {
+        background-color: #0056b3; 
+    }
+
+    .update-password-form p {
+        margin-top: 15px; 
+    }
+}

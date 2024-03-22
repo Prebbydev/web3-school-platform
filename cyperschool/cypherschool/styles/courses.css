@@ -1,0 +1,49 @@
+.courses-container{
+    margin-top:30px;
+}
+.courses-span{
+    text-decoration: none;
+    color: #007bff;
+    cursor: pointer;
+}
+.courses-h2{
+    padding: 30px; 
+    color: #333333; 
+    text-align: center; 
+    margin-bottom: 40px;
+}
+.courses{
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px;
+}
+
+@media only screen and (max-width: 1024px) {     
+    .courses-span{
+        margin-left: 5%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .courses-span{
+        margin-left: 2%;
+    }
+    .courses-container {
+        margin-top: 20px; 
+    }
+
+    .courses-h2 {
+        padding: 20px; 
+        margin-bottom: 30px; 
+    }
+
+    .courses {
+        grid-template-columns: repeat(1, 1fr); 
+    }
+}
+@media only screen and (max-width: 390px) {     
+    .courses-span{
+        margin-left: 6%;
+        font-size: 13px;
+    }
+}

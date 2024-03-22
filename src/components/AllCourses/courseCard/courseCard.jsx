@@ -1,5 +1,5 @@
 import React from 'react';
-import '../courseCard/courseCard.css';
+import './courseCard.css';
 import img1 from '../courseImages/blockchain_fundamentals.jpg';
 import img2 from '../courseImages/ethereum_development.jpg';
 import img3 from '../courseImages/web3js_essentials.jpg';

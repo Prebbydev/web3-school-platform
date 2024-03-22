@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaEnvelope, FaTrash } from 'react-icons/fa';
-import '../Notification/notification.css';
+import './notification.css';
 
 const Notification = () => {
   const [activeTab, setActiveTab] = useState('general');

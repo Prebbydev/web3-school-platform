@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {AiOutlineLock } from 'react-icons/ai';
 import {FaUser} from 'react-icons/fa';
-import '../LoginModal/login.css';
+import './login.css';
 import SignUpModal from '../SignupModal/signup';
 import ForgotPassword from '../ForgotPassWord/forgotPassWord';
 

@@ -62,3 +62,65 @@ cursor: pointer;
 background-color: #0056b3;
 }
   
+
+@media only screen and (max-width: 768px) {
+    .chatbox h3{
+        font-size: 12px;
+    }
+    .chatbox{
+        width: 200px;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    .community {
+        margin: 10px; 
+    }
+
+    .community-header {
+        padding: 20px; 
+    }
+
+    .user-list {
+        grid-template-columns: repeat(1, 1fr); 
+        gap: 10px; 
+    }
+
+    .user-card img {
+        width: 80%; 
+    }
+
+    .user-details {
+        padding: 5px; 
+    }
+
+    .user-details h3 {
+        margin-bottom: 3px; 
+    }
+
+    .chatbox {
+        padding: 5px; 
+        margin-top: 5px; 
+        width: 250px;
+    }
+
+    .pagination {
+        margin-top: 10px;
+    }
+
+    .pagination button {
+        padding: 8px 15px; 
+        margin: 0 3px;
+    }
+}
+
+@media only screen and (max-width: 280px) {
+    .chatbox{
+        width: 160px;
+    }
+    .chatbox h3{
+        font-size: 10px;
+    }
+
+}
