@@ -18,7 +18,7 @@ const [submission, setSubmission] = useState('')
     abi: EducationAbi.abi,
     address: EducationAbi.address,
     functionName: "submitAssignment",
-    args: [query?.id],
+    args: [query?.id, submission],
     // account: address
   });
 
@@ -110,7 +110,9 @@ const [submission, setSubmission] = useState('')
           <div id='assignment' className=' mt-[50px]'>
             <h3 className=' text-center'>Submit Assignment for reward</h3>
             <form className=' flex  flex-col  justify-center items-center' >
-            <input type="text" name="reward" id="reward" className='w-[350px]  p-2 mt-2 mb-3 border-2 border-[#7b64f2] rounded-lg' />
+            <input type="text" onChange={(e) => {
+                    setSubmission(e.target.value);
+                  }} name="submission" id="submission" className='w-[350px]  p-2 mt-2 mb-3 border-2 border-[#7b64f2] rounded-lg' placeholder='Submit Your assignment URl' />
             <button type='submit' className=' bg-blue-950 text-white w-[150px] py-5 rounded-md'>Submit</button>
             </form>
 
