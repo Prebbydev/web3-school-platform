@@ -1,69 +1,58 @@
-# Getting Started with Create React App
+# Cypher School is a decentralized application (dApp)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Cypher School is a decentralized application (dApp) powered by Arbitrum technology, redefining the learning landscape by merging blockchain and Web3 advancements. This platform aspires to create a decentralized hub for education, ensuring transparency, incentivized learning, and community-driven development.
 
-## Available Scripts
+In the project directory, you can run cd cypherschool/cypherschool:
 
-In the project directory, you can run:
+### `yarn` to install all the necessary dependencies
 
-### `npm start`
+### `yarn run dev`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Key Features:**
 
-### `npm test`
+1. **Decentralized Identity and Credentials:**
+   - Users can create and manage their decentralized identities using Arbitrum technology, ensuring ownership and control of their learning credentials.
+   - Verified credentials can be easily shared with other platforms, institutions, or employers, enhancing trust and recognition.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Immutable Learning Records:**
+   - Learning achievements and records are stored on the Arbitrum blockchain, providing tamper-proof and transparent records of a user's educational journey.
+   - This feature enables learners to build a comprehensive and verifiable portfolio of their skills and accomplishments.
 
-### `npm run build`
+1. **Smart Contracts for Incentives:**
+   - Arbitrum-based smart contracts govern rewards and incentives for both learners and content creators.
+   - Participants earn crypto tokens for completing courses, contributing quality content, or receiving positive feedback, creating a self-sustaining ecosystem.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Collaborative Content Creation:**
+   - The platform supports decentralized content creation on the Arbitrum network, allowing educators and experts to collaboratively develop courses and learning materials.
+   - Contributors are rewarded based on the popularity and quality of their contributions.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Tokenized Governance (Future Feature):**
+   - A governance token on the Arbitrum blockchain allows users to participate in the decision-making process regarding platform upgrades, content policies, and incentive structures.
+   - A decentralized autonomous organization (DAO) on Arbitrum empowers the community to shape the future development of the platform.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Interoperability and Integration:**
+   - Cypher School on Arbitrum supports interoperability with other Web3 applications and platforms.
+   - Users can seamlessly import and export their learning records within the Arbitrum network, fostering a connected and interoperable educational landscape.
 
-### `npm run eject`
+**Why Cypher School:**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. **Ownership and Control:**
+   - Learners have full control over their data and learning records on the Arbitrum blockchain, eliminating the risk of centralized control or censorship.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Incentivized Learning:**
+   - The platform encourages continuous learning on the Arbitrum network by providing tangible incentives for both learners and educators, creating a vibrant and motivated community.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **Global Accessibility:**
+   - Cypher School on Arbitrum breaks down geographical barriers, enabling access to quality education for individuals worldwide.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **Trust and Transparency:**
+   - Arbitrum's blockchain technology ensures transparency in credentials and achievements, fostering trust among users, employers, and educational institutions.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. **Community-driven Development:**
+   - The platform's governance model on Arbitrum allows the community to actively contribute to its development and evolution, ensuring that it meets the diverse needs of its users.
 
 ### `npm run build` fails to minify
 
