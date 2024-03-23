@@ -17,6 +17,7 @@ const Admin = () => {
     course_credits: "",
     courseReward: "",
   });
+  const [studentAddress, setStudentAddress] = useState("")
   const { address } = useAccount();
   const [fetchedData, setFetchedData] = useState(null);
 
@@ -167,7 +168,25 @@ const Admin = () => {
         </form>
       </div>
       {/* <button onClick={result}>get course Course</button> */}
-  
+  {/* Admin  */}
+    <div>
+      Become a student 
+      <form
+          className=" flex flex-col justify-center gap-2 items-center"
+          onSubmit={handlesubmit}
+        >
+          <input
+            type="text"
+            name="address"
+            placeholder="address"
+            value={studentAddress}
+            className=" w-[200px]  p-2 mt-2 mb-3 border-2 border-[#7b64f2] rounded-lg"
+            onChange={(e) => setStudentAddress(e.target.value)}          />
+          <button type="submit">Upload Course</button>
+        </form>
+
+      
+    </div>
     </div>
     // {/* </WagmiWrapperLayout> */}
   );

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link'
 import { FaArrowUp } from 'react-icons/fa';
 import Greeting from '../../components/Greetings/greetings';
@@ -6,10 +6,20 @@ import PerformanceAnalysis from '../../components/PerformanceAnalysis/performanc
 import Quotes from '../Quotes/quotes';
 import Tasks from '../../components/Tasks/tasks';
 import UpdatePasswordForm from '../../components/UpdatePassWordForm/updatePassForm';
-
+import { useWriteContract, useSimulateContract, useAccount, useReadContract  } from "wagmi";
+import axios from "../../axios/authAxios"
+import { truuncateAddress } from "../../helpers/truncateAddress"
 const UserDash = () => {
-    const name = 'Precious'; 
     const coursesRegistered = 5;
+    const { address } = useAccount()
+
+    const [data, setData] = useState()
+
+    
+
+    
+    
+
 
     const performanceData = {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -37,6 +47,21 @@ const UserDash = () => {
         setShowUpdatePasswordForm(false);
     };
 
+    useEffect(() => {
+        const profile = async () => {
+            try {
+                const response = await axios().get("/user-profile")
+            console.log(response)
+            setData(response)
+            } catch (error) {
+             console.log(error);   
+            }
+          }
+        profile()
+      }, [])
+
+      console.log(data);
+
     return (
         <div style={{ marginTop: "20px", padding: "20px" }} className='widget-container'>
             <div style={{ display: "flex", gap: "10px", marginLeft: "10px" }}>
@@ -48,13 +73,13 @@ const UserDash = () => {
                     )}
                 </div>
                 <div style={{ color: "#007bff" }}>/</div>
-                <div style={{ color: "#007bff" }}>Student's Dashboard</div>
+                <div style={{ color: "#007bff" }}>Student's Dashboard Coming Soon</div>
             </div>
 
             
 
             <div className="dashboard" style={{ display: showUpdatePasswordForm || showTasks ? 'none' : 'block' }}>
-            <Greeting name={name} className="greeting"/>
+            <Greeting name={truuncateAddress(address)} className="greeting"/>
                 <div className='top-widget'>
                     <div className="widget" onClick={handleUpdatePasswordClick}>
                         <p className="widget-title">Update Password</p>

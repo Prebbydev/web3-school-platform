@@ -106,9 +106,6 @@ contract EducationalPlatform is AccessControl {
     );
 }
 
-    
-
-
 
     
 
@@ -169,24 +166,16 @@ contract EducationalPlatform is AccessControl {
     require(_courseId <= totalCourses, "Invalid course ID");
     Course storage course = courses[_courseId];
 
-    // Get all enrolled students for the course
     address[] memory enrolledStudentsForCourse = courseEnrollments[_courseId];
 
-    // Initialize an array to hold the submission links
     string[] memory submissions = new string[](enrolledStudentsForCourse.length);
 
-    // Iterate over all enrolled students and retrieve their submissions
     for (uint256 i = 0; i < enrolledStudentsForCourse.length; i++) {
-        // Retrieve the submission link for the current student
         string memory submissionLink = course.studentSubmissions[enrolledStudentsForCourse[i]];
 
-        // Check if the submission link is empty (i.e., the student has not submitted an assignment)
         if (bytes(submissionLink).length == 0) {
-            // Handle the case where the student has not submitted an assignment
-            // For example, you might want to set the submission link to a default value or skip this student
             submissions[i] = "No submission";
         } else {
-            // If the student has submitted an assignment, store the submission link
             submissions[i] = submissionLink;
         }
     }
@@ -194,33 +183,7 @@ contract EducationalPlatform is AccessControl {
     return submissions;
 }
 
-//     function getFCourseSubmissions(uint256 _courseId) external view returns (Submission[] memory) {
-//     require(_courseId <= totalCourses, "Invalid course ID");
-//     Course storage course = courses[_courseId];
 
-//     // Assuming a maximum of 100 submissions for simplicity
-//     Submission[] memory submissions = new Submission[](100);
-
-//     // Get all enrolled students for the course
-//     address[] memory enrolledStudentsForCourse = courseEnrollments[_courseId];
-
-//     // Iterate over all enrolled students and retrieve their submissions
-//     for (uint256 i = 0; i < enrolledStudentsForCourse.length; i++) {
-//         // Retrieve the submission link for the current student
-//         string memory submissionLink = course.studentSubmissions[enrolledStudentsForCourse[i]];
-
-//         // Check if the submission link is empty (i.e., the student has not submitted an assignment)
-//         if (bytes(submissionLink).length == 0) {
-//             // Handle the case where the student has not submitted an assignment
-//             // For example, you might want to set the submission link to a default value or skip this student
-//             submissions[i] = Submission(enrolledStudentsForCourse[i], "No submission");
-//         } else {
-//             // If the student has submitted an assignment, store the submission link
-//             submissions[i] = Submission(enrolledStudentsForCourse[i], submissionLink);
-//         }
-//     }
-
-//     return submissions;
 // }
 
 

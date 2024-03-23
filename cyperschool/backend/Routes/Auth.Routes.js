@@ -23,7 +23,7 @@ router.post('/refresh-token', authRoutes.refreshToken)
 router.get('/user-profile', decode, authRoutes.getProfile)
 
 router.put('/user-profile', decode, authRoutes.saveProfile)
-// router.patch('/buyer-account',  authRoutes.confirmBuyerAccount)
+
 
 router.all('/register', handleInvalidMethod);
 router.all('/confirm', handleInvalidMethod);
@@ -35,6 +35,6 @@ router.all('/refresh-token', handleInvalidMethod);
 router.all('/logout', handleInvalidMethod);
 router.all('/user-profile', handleInvalidMethod);
 router.all('/user-profile', handleInvalidMethod);
-// router.all('/confirm-buyer-account', handleInvalidMethod);
+
 
 module.exports = router
