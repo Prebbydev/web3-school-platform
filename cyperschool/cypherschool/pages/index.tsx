@@ -74,7 +74,7 @@ if (typeof window !== "undefined") {
       <div className='container' id='home'>
           <div className='section-1' >
               <div className='logo'>
-                  <img src={'logo.png'} alt="" className='logo-pic' />
+                  <img src={'cypherschool.png'} alt="" className='logo-pic' />
               </div>
               <div className='nav-bar'>
                   <ul className='menu'>
@@ -117,7 +117,7 @@ if (typeof window !== "undefined") {
           <div className='hero_section'>
               <div className='overlay'></div>
               <div className='hero_content'>
-                   <h2>Empower Your Education with <i>Cyperschool</i></h2> 
+                   <h2>Empower Your Education with <i>Cypherschool</i></h2> 
                    <h4>Unlock your potential with web3 online learning</h4>
                    <p>Join thousands of students worldwide in achieving academic success through flexible,interactive 
                       and engaging online courses.
@@ -127,10 +127,10 @@ if (typeof window !== "undefined") {
           </div>
           <div className='intro_section' id='about-us'>
               <div className='intro_text'>
-                  <h5>Welcome to Cyperschool Academy, your gateway to a world web3 knowledge and opportunity.</h5>
-                  <p>At Wellsy Academy, we believe in empowering learners of all ages to reach their
-                  full potential through quality education and innovative learning experiences in blockchain space. 
-                  Whether you are a student,professional or lifelong learner,our diverse range of courses and resources
+                  <h5>Welcome to Cypherschool Academy, your gateway to a world web3 knowledge and opportunity.</h5>
+                  <p>At Cypherschool Academy, we believe in empowering learners of all ages to reach their
+                  full potential through quality education and innovative web3 learning experiences in blockchain space. 
+                  Whether you are a student, professional or lifelong learner,our diverse range of courses and resources
                   are designed to cater to your unigue learning goals and interests.
                   </p>
               </div>

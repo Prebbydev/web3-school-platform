@@ -15,6 +15,8 @@ function SignUpModal({ toggleModal, openLoginModal }) {
         email: '',
         password: '',
     });
+    const navigate = useRouter();
+    
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [successMessage, setSuccessMessage] = useState('');
@@ -102,6 +104,7 @@ function SignUpModal({ toggleModal, openLoginModal }) {
                         &times;
                     </span>
                     <h2>SignUp</h2>
+                    <p>{notification?.message}</p>
                     <form onSubmit={handleSubmitSignUp}>
                         <div className="signIn">
                             <div className="signLabel">
@@ -110,15 +113,9 @@ function SignUpModal({ toggleModal, openLoginModal }) {
                             <div className="signInput">
                                 <input type="email" id="email" name="email" value={formData.email} onChange={handleInputChange} required />
                             </div>
+                            <div>{emailError?.message ?? ""}</div>
                         </div>
-                        {/* <div className="signIn">
-                            <div className="signLabel">
-                                <FaUser style={{ fontSize: '18px' }} /> <label htmlFor="username">Username</label>
-                            </div>
-                            <div className="signInput">
-                                <input type="text" id="username" name="username" value={formData.username} onChange={handleInputChange} required />
-                            </div>
-                        </div> */}
+                
                         <div className="signIn">
                             <div className="signLabel">
                                 <AiOutlineLock style={{ fontSize: '18px' }} /> <label htmlFor="password">Password</label>
@@ -127,6 +124,7 @@ function SignUpModal({ toggleModal, openLoginModal }) {
                                 <input type={showPassword ? 'text' : 'password'} value={formData.password} onChange={handleInputChange} id="password" name="password" required />
                                 <p onClick={toggleShowPassword}>{showPassword ? 'Hide' : 'Show'}</p>
                             </div>
+                            <div>{passwordError?.message ?? ""}</div>
                         </div>
                         {/* {error && <p className="signUpmessage">{error}</p>}
                         {successMessage && <p className="message">{successMessage}</p>} */}

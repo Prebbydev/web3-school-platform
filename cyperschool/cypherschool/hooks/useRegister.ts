@@ -30,6 +30,9 @@ const useRegister = ({ email, password }: Credentials) => {
         stopLoading();
         return true;
       } catch (error: any) {
+        console.log(error);
+        setErrorNotification("try another email address");
+        
         if (error.response) {
           setErrorNotification(error?.response?.data?.error?.message);
         } else if (error.request) {

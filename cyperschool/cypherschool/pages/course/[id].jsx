@@ -82,7 +82,7 @@ const [submission, setSubmission] = useState('')
   }
 
   return (
-<div className=" flex justify-center flex-col items-center" id='goTop'>
+<div className=" flex justify-center flex-col items-center" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}} id='goTop'>
     <h3 style={{marginTop:'60px'}}>Video Playlist for blockchain course.</h3>
 
       <div style={{display:'flex', gap:'20px'}}>
@@ -91,7 +91,7 @@ const [submission, setSubmission] = useState('')
       </div>
       
         <div>
-        <h2 className=' text-bold text-lg text-center' style={{ fontSize: '20px', fontWeight: 'bold'}}>{courseData.title}</h2>
+        <h2 className=' text-bold text-lg text-center' style={{ fontSize: '20px', fontWeight: 'bold', textAlign: "center"}}>{courseData.title}</h2>
       <p style={{ fontSize: '20px', fontWeight: 'smi-bold'}}>{response?.description}</p>
         </div>
       
@@ -107,13 +107,13 @@ const [submission, setSubmission] = useState('')
             ></iframe>
           </div>
               
-          <div id='assignment' className=' mt-[50px]'>
-            <h3 className=' text-center'>Submit Assignment for reward</h3>
-            <form className=' flex  flex-col  justify-center items-center' onSubmit={handleSubmit}>
+          <div id='assignment' className=' mt-[50px]' style={{ marginTop: "50px"}}>
+            <h3 className=' text-center' style={{ textAlign: "center"}}>Submit Your Assignment For Reward</h3>
+            <form className=' flex  flex-col  justify-center items-center' style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}} onSubmit={handleSubmit}>
             <input type="text" value={submission} onChange={(e) => {
                     setSubmission(e.target.value);
-                  }} name="submission" id="submission" className='w-[350px]  p-2 mt-2 mb-3 border-2 border-[#7b64f2] rounded-lg' placeholder='Submit Your assignment URl' />
-            <button type='submit' className=' bg-blue-950 text-white w-[150px] py-5 rounded-md'>Submit</button>
+                  }} name="submission" id="submission" className='w-[350px]  p-2 mt-2 mb-3 border-2 border-[#7b64f2] rounded-lg' style={{ borderColor: "#7b64f2", borderRadius: "10px", padding: '8px', marginTop: "8px", marginBottom: "12px", width: "350px"}} placeholder='Submit Your Assignment URl' />
+            <button type='submit' className=' bg-blue-950 text-white w-[150px] py-5 rounded-md' style={{borderRadius: "10px", padding: '8px', marginTop: "8px", marginBottom: "12px", width: "150px"}}>Submit</button>
             </form>
 
           </div>

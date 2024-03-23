@@ -178,7 +178,7 @@ console.log(enrollerror);
           }}
         >
           <a href="/course/2">
-          Enrolled
+          View course
           </a>
         </button>
           </div>
