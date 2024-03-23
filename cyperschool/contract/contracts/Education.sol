@@ -133,8 +133,8 @@ contract EducationalPlatform is AccessControl {
     require(_courseId <= totalCourses, "Invalid course ID");
     require(!courses[_courseId].isCompleted, "Course already completed");
 
-    // Store the submission link for the student
     courses[_courseId].studentSubmissions[msg.sender] = _assignmentURL;
+    courses[_courseId].isCompleted = true;
 
     emit AssignmentSubmitted(msg.sender, _courseId, _assignmentURL);
 }

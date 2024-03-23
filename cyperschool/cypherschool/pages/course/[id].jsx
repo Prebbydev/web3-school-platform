@@ -71,7 +71,7 @@ const [submission, setSubmission] = useState('')
   if (!courseData) return null;
 
   const handleSubmit = async(e) => {
-    e.preventDafult();
+    e.preventDefault();
     try {
       
       const result = await writeContractAsync(simulateContract?.request)
@@ -80,6 +80,7 @@ const [submission, setSubmission] = useState('')
       // console.log(error);
     }
   }
+  console.log(courseData?.isCompleted)
 
   return (
 <div className=" flex justify-center flex-col items-center" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}} id='goTop'>
@@ -87,7 +88,6 @@ const [submission, setSubmission] = useState('')
 
       <div style={{display:'flex', gap:'20px'}}>
         <div ><a href='#assignments' style={{textDecoration:'none', color:'#000080',fontWeight:'700'}}>Go to Assignments</a></div>
-        {/* <div><a href='#quiz' style={{textDecoration:'none', color:'#000080',fontWeight:'700'}}>Take Quiz</a></div> */}
       </div>
       
         <div>
@@ -113,9 +113,9 @@ const [submission, setSubmission] = useState('')
             <input type="text" value={submission} onChange={(e) => {
                     setSubmission(e.target.value);
                   }} name="submission" id="submission" className='w-[350px]  p-2 mt-2 mb-3 border-2 border-[#7b64f2] rounded-lg' style={{ borderColor: "#7b64f2", borderRadius: "10px", padding: '8px', marginTop: "8px", marginBottom: "12px", width: "350px"}} placeholder='Submit Your Assignment URl' />
-            <button type='submit' className=' bg-blue-950 text-white w-[150px] py-5 rounded-md' style={{borderRadius: "10px", padding: '8px', marginTop: "8px", marginBottom: "12px", width: "150px"}}>Submit</button>
+            <button type='submit' className=' bg-blue-950 text-white w-[150px] py-5 rounded-md' style={{borderRadius: "10px", padding: '8px', marginTop: "8px", marginBottom: "12px", width: "150px"}} disabled={simulateLoading}>Submit</button>
             </form>
-
+              <p>{courseData?.isCompleted}</p>
           </div>
     </div>
   )
