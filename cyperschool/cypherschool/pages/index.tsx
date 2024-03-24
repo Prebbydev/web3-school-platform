@@ -119,8 +119,8 @@ if (typeof window !== "undefined") {
               <div className='hero_content'>
                    <h2>Empower Your Education with <i>Cypherschool</i></h2> 
                    <h4>Unlock your potential with web3 online learning</h4>
-                   <p>Join thousands of students worldwide in achieving academic success through flexible,interactive 
-                      and engaging online courses.
+                   <p>Join thousands of students worldwide in achieving career success through flexible,interactive 
+                      and engaging web3 courses.
                    </p>
                    <button onClick={handleSignUpClick}>Start Learning Today</button>
               </div>
@@ -164,9 +164,9 @@ if (typeof window !== "undefined") {
                   {currentIndex===0 && (
                       <div className={`${currentIndex===0 ? "active": "hidden"}`}>
                           <img src={"student.png"} alt=''/>
-                          <h3>Pelumi Onasoga,<i><small>cs student</small></i></h3>
-                          <FaQuoteLeft style={{fontSize:'10px',marginLeft:'30px'}}/><p><i><blockquote>Wellsy Academy has transformed the way I learn. It is intuitive,engaging,
-                              and has helped me achieve my academic goals.</blockquote></i>
+                          <h3>Pelumi Onasoga,<i><small>Front end Eng.</small></i></h3>
+                          <FaQuoteLeft style={{fontSize:'10px',marginLeft:'30px'}}/><p><i><blockquote>Cypher School has transformed the way I learn. It is intuitive,engaging,
+                              and has helped me achieve my career goals.</blockquote></i>
                           </p><FaQuoteRight style={{fontSize:'10px',marginLeft:'320px'}}/>
                   
                       </div>
@@ -174,17 +174,17 @@ if (typeof window !== "undefined") {
                   {currentIndex===1 && (
                       <div className={`${currentIndex===1 ? "active": "hidden"}`}>
                           <img src={'student_1.png'} alt=''/>
-                          <h3>Precious Ogbolu,<i><small>medical student</small></i></h3>
-                          <FaQuoteLeft style={{fontSize:'10px',marginLeft:'30px'}}/><p><i><blockquote> The rigorous and comprehensive program at Wellsy Academy has equipped me with skills and confidence
-                              needed for success in the medical field.</blockquote></i>
+                          <h3>Precious Ogbolu,<i><small>Web3 dev</small></i></h3>
+                          <FaQuoteLeft style={{fontSize:'10px',marginLeft:'30px'}}/><p><i><blockquote> The rigorous and comprehensive program at Cypher School has equipped me with web3 skills and confidence
+                              needed for success in my career.</blockquote></i>
                           </p><FaQuoteRight style={{fontSize:'10px',marginLeft:'320px'}}/>
                       </div>
                   )}
                   {currentIndex===2 && (
                       <div className={`${currentIndex===2 ? "active": "hidden"}`}>
                           <img src={'student_2.png'} alt=''/>
-                          <h3>Chidinma Nwatu,<i><small>engineering student</small></i></h3>
-                          <FaQuoteLeft style={{fontSize:'10px',marginLeft:'30px'}}/><p><i><blockquote> Wellsy's hands-on approach and cutting-edge curriculum have prepared me to tackle
+                          <h3>Chidinma Nwatu,<i><small>Nodejs dev</small></i></h3>
+                          <FaQuoteLeft style={{fontSize:'10px',marginLeft:'30px'}}/><p><i><blockquote> Cypher's hands-on approach and cutting-edge curriculum have prepared me to tackle
                                the real-world engineering challenges with confidence and expertise.</blockquote></i>
                           </p><FaQuoteRight style={{fontSize:'10px',marginLeft:'320px'}}/>
                       </div>
@@ -250,7 +250,7 @@ if (typeof window !== "undefined") {
               <div className='contact' id='contact'>
                   <div className='contact-1'>
                       <GrLocation className='contact_icon'/>
-                     <p>Wellsy Academy,Ikoyi,Lagos,Nigeria.</p>
+                     <p>Cypher School,Ikoyi,Lagos,Nigeria.</p>
                   </div>
                   <div className='contact-1'>
                       <FaPhone className='contact_icon'/>
@@ -258,7 +258,7 @@ if (typeof window !== "undefined") {
                   </div>
                   <div className='contact-1'>
                       <FiMail className='contact_icon'/>
-                      <p>support@wellsyacademy.com</p>
+                      <p>support@cypherschool.com</p>
                   </div>
                   <div className='contact-1'></div>
               </div>
