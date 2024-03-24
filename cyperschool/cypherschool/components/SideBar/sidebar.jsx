@@ -41,10 +41,13 @@ const Sidebar = ({ onSectionChange }) => {
          <ConnectButton />
         </div>
         <div className='dash'>
-          
-          <span className='tooltip'>Logout</span>
           <Link href="/" style={{textDecoration:"none"}}>
             <div className='dash_icon'><AiOutlineLogout/> </div>
+          </Link>
+          <span className='tooltip'>Logout</span>
+          
+          <Link href="/" style={{textDecoration:"none"}}>
+            
             <div>
                <li style={{color:"#333333"}} >
                 Logout 
