@@ -73,7 +73,7 @@ const UserDash = () => {
                     )}
                 </div>
                 <div style={{ color: "#007bff" }}>/</div>
-                <div style={{ color: "#007bff" }}>Student's Dashboard Coming Soon</div>
+                <div style={{ color: "#007bff" }}>Student's Dashboard</div>
             </div>
 
             
