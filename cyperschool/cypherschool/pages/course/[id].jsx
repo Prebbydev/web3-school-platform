@@ -87,7 +87,7 @@ const [submission, setSubmission] = useState('')
     <h3 style={{marginTop:'60px'}}>Video Playlist for blockchain course.</h3>
 
       <div style={{display:'flex', gap:'20px'}}>
-        <div ><a href='#assignments' style={{textDecoration:'none', color:'#000080',fontWeight:'700'}}>Go to Assignments</a></div>
+        <div ><a href='/dashboard' style={{textDecoration:'none', color:'#000080',fontWeight:'700'}}>Go back home </a></div>
       </div>
       
         <div>
