@@ -43,17 +43,17 @@
 }
 @media only screen and (max-width:912px) {
   .sidebar{
-    width: 110px;
+    width: 90px;
   }
 }
   
 @media only screen and (max-width:860px) {
   .sidebar{
-    width: 80px;
+    width: 70px;
   }
 }
 
-@media only screen and (max-width:0px) {
+@media only screen and (max-width:540px) {
   .sidebar{
     width: 50px;
     height: 100%;
