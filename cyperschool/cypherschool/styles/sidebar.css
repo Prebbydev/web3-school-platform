@@ -43,19 +43,19 @@
 }
 @media only screen and (max-width:912px) {
   .sidebar{
-    width: 180px;
+    width: 170px;
   }
 }
   
 @media only screen and (max-width:860px) {
   .sidebar{
-    width: 150px;
+    width: 140px;
   }
 }
 
 @media only screen and (max-width:540px) {
   .sidebar{
-    width: 100px;
+    width: 80px;
     height: 100%;
   }
 
@@ -67,9 +67,9 @@
 
   }
   .dash_icon{
-    font-size: 30px;
+    font-size: 20px;
     
-    margin-left: 18px;
+    margin-left: 13px;
   }
 
   .dash_icon:hover .tooltip{
@@ -80,30 +80,30 @@
 }
 @media only screen and (max-width:430px) {
   .sidebar{
-    width: 70px;
+    width: 50px;
   }
   .dash_icon{
-    margin-left: 3px;
+    margin-left: 1px;
   }
 }
 
 @media only screen and (max-width:415px) {
   .sidebar{
-    width: 80px;
+    width: 70px;
     height: 100%;
   }
   .dash_icon{
-    margin-left: 8px;
+    margin-left: 4px;
   }
 
 }
 
 @media only screen and (max-width:280px) {
   .sidebar{
-    width: 60px;
+    width: 40px;
   }
 
   .dash_icon{
-    margin-left: -4px;
+    margin-left: 2px;
   }
 }
