@@ -4,12 +4,13 @@ Cypher School is a decentralized application (dApp) powered by Arbitrum technolo
 
 In the project directory, you can run cd cypherschool/cypherschool:
 
-### `yarn` to install all the necessary dependencies
+### `yarn or npm` to install all the necessary dependencies
 
-### `yarn run dev`
+### `yarn run dev` `npm run dev`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Sign up and log in to the dashboard to connect wallet 
 
 **Key Features:**
 
