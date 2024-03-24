@@ -67,9 +67,9 @@ const UserProfile = () => {
                 
                 <div className="buttons">
                     {isLoading ? (
-                        <button type='submit'>Save</button>
-                    ) : (
                         <button type='submit'>Update</button>
+                    ) : (
+                        <button type='submit'>Save</button>
                     )}
                 </div>
             </form>
