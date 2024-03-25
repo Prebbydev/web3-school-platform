@@ -44,12 +44,14 @@
 @media only screen and (max-width:912px) {
   .sidebar{
     width: 90px;
+    height: 100%;
   }
 }
   
 @media only screen and (max-width:860px) {
   .sidebar{
     width: 70px;
+    height: 100%;
   }
 }
 
@@ -81,6 +83,7 @@
 @media only screen and (max-width:430px) {
   .sidebar{
     width: 30px;
+    height: 100%;
   }
   .dash_icon{
     margin-left: 1px;
@@ -101,6 +104,7 @@
 @media only screen and (max-width:280px) {
   .sidebar{
     width: 30px;
+    height: 100%;
   }
 
   .dash_icon{
