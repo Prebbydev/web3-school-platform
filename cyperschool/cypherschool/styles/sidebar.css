@@ -55,7 +55,7 @@
 
 @media only screen and (max-width:540px) {
   .sidebar{
-    width: 50px;
+    width: 40px;
     height: 100%;
   }
 
@@ -67,9 +67,9 @@
 
   }
   .dash_icon{
-    font-size: 20px;
+    font-size: 15px;
     
-    margin-left: 5px;
+    margin-left: 3px;
   }
 
   .dash_icon:hover .tooltip{
@@ -89,7 +89,7 @@
 
 @media only screen and (max-width:415px) {
   .sidebar{
-    width: 50px;
+    width: 30px;
     height: 100%;
   }
   .dash_icon{
