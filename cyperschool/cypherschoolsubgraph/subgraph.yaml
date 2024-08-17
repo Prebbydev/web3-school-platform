@@ -1,0 +1,44 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: EducationalPlatform
+    network: arbitrum-sepolia
+    source:
+      address: "0x6710f88f36Fd2a501Db4CA0e5737E6007E28F4B6"
+      abi: EducationalPlatform
+      startBlock: 25585406
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - AssignmentSubmitted
+        - CourseCompleted
+        - CourseEnrolled
+        - CreateCourse
+        - RoleAdminChanged
+        - RoleGranted
+        - RoleRevoked
+      abis:
+        - name: EducationalPlatform
+          file: ./abis/EducationalPlatform.json
+      eventHandlers:
+        - event: AssignmentSubmitted(indexed address,indexed uint256,string)
+          handler: handleAssignmentSubmitted
+        - event: CourseCompleted(address,uint256,uint256)
+          handler: handleCourseCompleted
+        - event: CourseEnrolled(address,uint256,uint256)
+          handler: handleCourseEnrolled
+        - event: CreateCourse(indexed uint256,string,string,string,uint256,uint256,bool)
+          handler: handleCreateCourse
+        - event: RoleAdminChanged(indexed bytes32,indexed bytes32,indexed bytes32)
+          handler: handleRoleAdminChanged
+        - event: RoleGranted(indexed bytes32,indexed address,indexed address)
+          handler: handleRoleGranted
+        - event: RoleRevoked(indexed bytes32,indexed address,indexed address)
+          handler: handleRoleRevoked
+      file: ./src/educational-platform.ts

@@ -1,0 +1,8 @@
+{
+  "arbitrum-sepolia": {
+    "EducationalPlatform": {
+      "address": "0x6710f88f36Fd2a501Db4CA0e5737E6007E28F4B6",
+      "startBlock": 25585406
+    }
+  }
+}
