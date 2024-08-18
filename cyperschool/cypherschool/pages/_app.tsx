@@ -30,6 +30,7 @@ import { ToastContainer } from 'react-toastify';
 import { getDefaultConfig, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import { internal_estimateMaxPriorityFeePerGas } from 'viem/_types/actions/public/estimateMaxPriorityFeePerGas';
 import { injected } from 'wagmi/connectors' 
+import Providers from "../provider/Providers"
 
 const config = getDefaultConfig({
 	appName: 'Cypher School',
@@ -49,13 +50,21 @@ const confiG = createConfig({
 })
 
 
-const client = new QueryClient();
+const client = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 60 * 1000,
+    },
+  },
+});
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <WagmiProvider config={confiG}>
       <QueryClientProvider client={client}>
         <RainbowKitProvider>
+          <Providers>
+
         <ToastContainer
           position="top-center"
           autoClose={5000}
@@ -69,6 +78,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           theme="light"
           />
           <Component {...pageProps} />
+          </Providers>
         </RainbowKitProvider>
       </QueryClientProvider>
     </WagmiProvider>

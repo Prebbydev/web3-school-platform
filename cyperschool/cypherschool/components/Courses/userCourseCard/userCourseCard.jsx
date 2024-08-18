@@ -13,14 +13,14 @@ import useLoading from "../../../hooks/useLoading"
 import useNotification from "../../../hooks/useNotification"
 import { toast } from "react-toastify"
 
-const UserCourseCard = ({  id }) => {
+const UserCourseCard = ({  courseData }) => {
 
   const { writeContractAsync } = useWriteContract()
   const { data: simulateEnroll, error: enrollerror } = useSimulateContract({
     abi: EducationAbi.abi,
     address: EducationAbi.address,
     functionName: "enrollCourse",
-    args: [id],
+    args: [courseData?.courseId],
   });
   const imageUrls = {
     "Blockchain Fundamentals": "blockchain_fundamentals.jpg",
@@ -45,33 +45,40 @@ const UserCourseCard = ({  id }) => {
 console.log(enrollerror);
 
   const [enrolled, setEnrolled] = useState(false);
-  const [courseData, setCourseData] = useState(null);
+  // const [courseData, setCourseData] = useState(null);
   const [data, setData] = useState(null);
   const [response, setResponse] = useState(null)
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const { address } = useAccount();
 
-  const { data: fetchResult } = useReadContract({
-    abi: EducationAbi.abi,
-    address: EducationAbi.address,
-    functionName: "getCoursesDetails",
-    args: [id],
-  });
+  // const { data: fetchResult } = useReadContract({
+  //   abi: EducationAbi.abi,
+  //   address: EducationAbi.address,
+  //   functionName: "getCoursesDetails",
+  //   args: [id],
+  // });
+  // title
+  //     courseURL
+  //     SubmitLink,
+  //     rewards,
+  //     credits,
+  //     isCompleted,
+  //     eroll_Course
 
-  const getCoursesDetails = useCallback(() => {
-    if (!fetchResult) return null;
-    setCourseData({
-      title: fetchResult[0],
-      courseURL: fetchResult[1],
-      SubmitLink: fetchResult[2],
-      rewards: fetchResult[3],
-      credits: Number(fetchResult[4]),
-      isCompleted: Number(fetchResult[5]),
-      eroll_Course: fetchResult[6],
-    });
-    setData(fetchResult[1]);
-    setLoading(false);
-  }, [fetchResult]);
+  // const getCoursesDetails = useCallback(() => {
+  //   if (!fetchResult) return null;
+  //   setCourseData({
+  //     title: fetchResult[0],
+  //     courseURL: fetchResult[1],
+  //     SubmitLink: fetchResult[2],
+  //     rewards: fetchResult[3],
+  //     credits: Number(fetchResult[4]),
+  //     isCompleted: Number(fetchResult[5]),
+  //     eroll_Course: fetchResult[6],
+  //   });
+  //   setData(fetchResult[1]);
+  //   setLoading(false);
+  // }, [fetchResult]);
 
 
   useEffect(() => {
@@ -90,19 +97,19 @@ console.log(enrollerror);
 
   console.log(data);
   console.log(response);
-  console.log(fetchResult);
+  // console.log(fetchResult);
  
 
-  useEffect(() => {
-    getCoursesDetails();
-  }, [getCoursesDetails]);
+  // useEffect(() => {
+  //   getCoursesDetails();
+  // }, [getCoursesDetails]);
 
-  if (!courseData) return null;
+  // if (!courseData) return null;
   console.log(loading);
 
   
 
-  console.log(fetchResult);
+
   const ipfsImageUrl = `https://ipfs.io/ipfs/${response?.image.replace('ipfs://', '')}`
   console.log(ipfsImageUrl);
 
@@ -131,7 +138,7 @@ console.log(enrollerror);
         // onClick={() => onClick(course)}
       /> */}
 
-      {/* <p className=" text-red-800">New edff</p> */}
+      
       <div className="video-wrapper" style={{marginLeft:'0%', marginTop: '10px'}}>
             <iframe
               width="300"
@@ -162,11 +169,11 @@ console.log(enrollerror);
           }} 
           onClick={handleEnrollCourse} className=""
         >
-          { loading && <LoadingIcon />} Enroll
+          { isLoading ? "Enrolling" : "Enroll"} Enroll
         </button>
       
         <button
-          // onClick={handleEnroll}
+          
           style={{
             padding: "10px 20px",
             backgroundColor: "#3A306C",
@@ -177,7 +184,7 @@ console.log(enrollerror);
             cursor: "pointer",
           }}
         >
-          <a href="/course/2">
+          <a href={`/course/${courseData?.courseId}`} target="_blank">
           View course
           </a>
         </button>

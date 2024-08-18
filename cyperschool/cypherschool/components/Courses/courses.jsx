@@ -2,25 +2,60 @@ import React,{useState} from 'react';
 import UserCourseCard from '../Courses/userCourseCard/userCourseCard';
 // import CoursePlaylist from '../Courses/coursePlaylist/coursePlaylist';
 import {
-    useWriteContract,
-    useSimulateContract,
-    useAccount,
     useReadContract,
-    useCall,
   } from "wagmi";
   import EducationAbi from "../../contract/EducationAbi.json"
-
-const AllCourses = () => {
+import { dehydrate, HydrationBoundary, QueryClient, useQuery } from "@tanstack/react-query"
+import { gql, request } from "graphql-request"
+import { base_url_grp, subgraph_id } from '../../helpers/constaant'; 
+const AllCourses =  () => {
 
     const [selectedCourse, setSelectedCourse] = useState(null);
 
     const handleGoBack = () => {
         setSelectedCourse(null);
     };
+    // {
+    //     createCourses {
+    //       reward
+    //       submitLink
+    //       title
+    //       transactionHash
+    //       courseId
+    //       courseURL
+    //       credit
+    //     }
+    //   }
+    const query = gql`
+    {
+        createCourses {
+          reward
+          submitLink
+          title
+          transactionHash
+          courseId
+          courseURL
+          credit
+        }
+      }
+    `
 
 
-    
 
+    // {base_url}/api/{api_key}/subgraphs/id/{subgraph_id}
+    const api_key = process.env.NEXT_PUBLIC_GRP;
+
+    // const url = 'https://gateway-testnet-arbitrum.network.thegraph.com/api/7019b9d92d595238be4505c1a3d62824/subgraphs/id/4UjmxmksnV8EYjXLvZD1BzdR9Rqdccwe3z6eH3hnpAvB'
+    const url = 'https://api.studio.thegraph.com/query/85337/cypherschool/"v0.0.1"'
+    console.log(url)
+
+    const { data, status } = useQuery({
+        queryKey: ['data'],
+        async queryFn() {
+return await request(url, query)
+        }
+    })
+    console.log(data?.createCourses ?? [], "datagrp")
     const courses = [
         {
             name: 'Decentralized Identity',
@@ -97,14 +132,14 @@ const AllCourses = () => {
 
       const courseLen = courseLenght ? Number(courseLenght.toString()) : 0;
       
-      const getCourseLenght = () => {
-        if(!courseLen) return null;
-        const courses = []
-        for (let i = 0; i < courseLen; i++) {
-            courses.push(<UserCourseCard key={i} id={i}/>)
-      }
-      return courses;
-    }
+    //   const getCourseLenght = () => {
+    //     if(!courseLen) return null;
+    //     const courses = []
+    //     for (let i = 0; i < courseLen; i++) {
+    //         courses.push(<UserCourseCard key={i} id={i}/>)
+    //   }
+    //   return courses;
+    // }
 
     return (
         <div>
@@ -121,10 +156,26 @@ const AllCourses = () => {
                     {/* {courses.map((course, index) => (
                         <UserCourseCard key={index} course={course} onClick={handleCourseClick} />
                     ))}  */}
-                    {getCourseLenght()}
+                    {/* {getCourseLenght()} */}
+                    {status === 'pending' ? (  
+      <div>Loading...</div>  
+    ) : status === 'error' ? (  
+      <div>Error occurred querying the Subgraph</div>  
+    ) : (
+
+        <>
+        {(data?.createCourses ?? []).map((item) => 
+             (
+            <UserCourseCard key={item.courseId} courseData={item} />
+            )
+        )}
+        
+        </>
+    )}
+
                 </div>
             </div>
-        {/* )} */}
+    
     </div>
       
     );

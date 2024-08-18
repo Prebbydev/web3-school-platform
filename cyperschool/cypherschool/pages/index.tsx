@@ -1,7 +1,4 @@
-import { ConnectButton } from '@rainbow-me/rainbowkit';
 import type { NextPage } from 'next';
-import Head from 'next/head';
-// import '../styles/UserDashboard.css'
 import Sidebar from "./../components/SideBar/sidebar"
 import { useState } from 'react';
 import Link from 'next/link'
@@ -79,7 +76,7 @@ if (typeof window !== "undefined") {
               <div className='nav-bar'>
                   <ul className='menu'>
                   <a href='#home'> <li>Home</li></a>
-                      <Link href="/courses"><li>Courses</li></Link>
+                      {/* <Link href="/courses"><li>Courses</li></Link> */}
                       <li><a href='#about-us'>About Us</a></li>
                       <li><a href='#contact'>Contact</a></li>
                       <li><a href='#testimony'>Testimonials</a></li>
