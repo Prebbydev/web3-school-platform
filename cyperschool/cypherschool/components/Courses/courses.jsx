@@ -7,7 +7,7 @@ import {
   import EducationAbi from "../../contract/EducationAbi.json"
 import { dehydrate, HydrationBoundary, QueryClient, useQuery } from "@tanstack/react-query"
 import { gql, request } from "graphql-request"
-import { base_url_grp, subgraph_id } from '../../helpers/constaant'; 
+
 const AllCourses =  () => {
 
     const [selectedCourse, setSelectedCourse] = useState(null);
@@ -42,12 +42,12 @@ const AllCourses =  () => {
 
 
 
-    // {base_url}/api/{api_key}/subgraphs/id/{subgraph_id}
-    const api_key = process.env.NEXT_PUBLIC_GRP;
+    
+   
 
     // const url = 'https://gateway-testnet-arbitrum.network.thegraph.com/api/7019b9d92d595238be4505c1a3d62824/subgraphs/id/4UjmxmksnV8EYjXLvZD1BzdR9Rqdccwe3z6eH3hnpAvB'
     const url = 'https://api.studio.thegraph.com/query/85337/cypherschool/"v0.0.1"'
-    console.log(url)
+  
 
     const { data, status } = useQuery({
         queryKey: ['data'],

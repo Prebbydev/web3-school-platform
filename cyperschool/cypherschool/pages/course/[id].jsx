@@ -2,13 +2,15 @@ import React, { useState, useEffect, useCallback } from 'react'
 import {
     useWriteContract,
     useSimulateContract,
-    useAccount,
     useReadContract,
   } from "wagmi";
   import EducationAbi from "../../contract/EducationAbi.json"
   import axios from "axios"
+  import { gql, request } from "graphql-request"
   import {useRouter} from "next/router";
-import LoadingIcon from "../../components/LoadingIcon"
+  import { dehydrate, HydrationBoundary, QueryClient, useQuery } from "@tanstack/react-query"
+
+
 const getCoursesDetails = ({ params }) => {
   const { query } = useRouter();
   console.log(query);
@@ -33,6 +35,36 @@ const [submission, setSubmission] = useState('')
     functionName: "getCoursesDetails",
     args: [query?.id],
   });
+  const id = query?.id
+  console.log(id, "id")
+  const queryData = gql`
+    query {
+      createCourses(where: { courseId: "${id}" }) {
+        title
+        submitLink
+        reward
+        param6
+        id
+        credit
+        courseURL
+        courseId
+      }
+    }
+  `;
+
+  const url = 'https://api.studio.thegraph.com/query/85337/cypherschool/"v0.0.1"';
+
+  const { data: grp_data, status } = useQuery({
+    queryKey: ['data', id],
+    queryFn: async () => {
+      return await request(url, queryData);
+    },
+  });
+
+  // if (status === 'loading') return <div>Loading...</div>;
+  // if (status === 'error') return <div>Error: {error.message}</div>;
+
+  console.log(grp_data?.createCourses ?? [], "datag", status);
 
 
   const getCoursesDetails = useCallback(() => {
@@ -80,7 +112,7 @@ const [submission, setSubmission] = useState('')
       // console.log(error);
     }
   }
-  console.log(courseData?.isCompleted)
+  
 
   return (
 <div className=" flex justify-center flex-col items-center" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}} id='goTop'>
