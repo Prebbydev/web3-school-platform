@@ -76,16 +76,16 @@ console.log(enrollerror);
   //     isCompleted: Number(fetchResult[5]),
   //     eroll_Course: fetchResult[6],
   //   });
-  //   setData(fetchResult[1]);
   //   setLoading(false);
   // }, [fetchResult]);
-
+  
+    // setData(courseData?.courseURL);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(data);
-        console.log(response);
+        const response = await axios.get(courseData?.courseURL);
+        // console.log(response);
         setResponse(response?.data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -95,8 +95,8 @@ console.log(enrollerror);
     fetchData();
   }, [data]);
 
-  console.log(data);
-  console.log(response);
+  // console.log(data);
+  // console.log(response);
   // console.log(fetchResult);
  
 
@@ -105,7 +105,7 @@ console.log(enrollerror);
   // }, [getCoursesDetails]);
 
   // if (!courseData) return null;
-  console.log(loading);
+  // console.log(loading);
 
   
 

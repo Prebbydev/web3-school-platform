@@ -36,7 +36,7 @@ const [submission, setSubmission] = useState('')
     args: [query?.id],
   });
   const id = query?.id
-  console.log(id, "id")
+  
   const queryData = gql`
     query {
       createCourses(where: { courseId: "${id}" }) {
@@ -61,10 +61,9 @@ const [submission, setSubmission] = useState('')
     },
   });
 
-  // if (status === 'loading') return <div>Loading...</div>;
-  // if (status === 'error') return <div>Error: {error.message}</div>;
+  
 
-  console.log(grp_data?.createCourses ?? [], "datag", status);
+  console.log(grp_data?.createCourses[0] ?? [], "datag", status);
 
 
   const getCoursesDetails = useCallback(() => {
@@ -84,6 +83,7 @@ const [submission, setSubmission] = useState('')
 
   useEffect(() => {
     const fetchData = async () => {
+      const courseURL = grp_data?.createCourses[0]?.courseURL;
       try {
         const response = await axios.get(data);
         console.log(response);
@@ -109,7 +109,7 @@ const [submission, setSubmission] = useState('')
       const result = await writeContractAsync(simulateContract?.request)
       console.log(result);
     } catch (error) {
-      // console.log(error);
+      
     }
   }
   
@@ -123,7 +123,7 @@ const [submission, setSubmission] = useState('')
       </div>
       
         <div>
-        <h2 className=' text-bold text-lg text-center' style={{ fontSize: '20px', fontWeight: 'bold', textAlign: "center"}}>{courseData.title}</h2>
+        <h2 className=' text-bold text-lg text-center' style={{ fontSize: '20px', fontWeight: 'bold', textAlign: "center"}}>{grp_data?.createCourses[0]?.title}</h2>
       <p style={{ fontSize: '20px', fontWeight: 'smi-bold'}}>{response?.description}</p>
         </div>
       
@@ -147,7 +147,7 @@ const [submission, setSubmission] = useState('')
                   }} name="submission" id="submission" className='w-[350px]  p-2 mt-2 mb-3 border-2 border-[#7b64f2] rounded-lg' style={{ borderColor: "#7b64f2", borderRadius: "10px", padding: '8px', marginTop: "8px", marginBottom: "12px", width: "350px"}} placeholder='Submit Your Assignment URl' />
             <button type='submit' className=' bg-blue-950 text-white w-[150px] py-5 rounded-md' style={{borderRadius: "10px", padding: '8px', marginTop: "8px", marginBottom: "12px", width: "150px"}} disabled={simulateLoading}>Submit</button>
             </form>
-              <p>{courseData?.isCompleted}</p>
+              <p>{grp_data?.createCourses[0]?.isCompleted}</p>
           </div>
     </div>
   )
