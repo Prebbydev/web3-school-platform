@@ -8,7 +8,7 @@ import {GrLocation} from 'react-icons/gr';
 import LoginModal from "./../components/LoginModal/login"
 import SignUpModal from "./../components/SignupModal/signup"
 import useAuthenticated from "../hooks/useAuthentication"
-
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 const Home: NextPage = () => {
   //function for Testimonial change
   const [currentIndex,setCurrentIndex]= useState(0);
@@ -76,23 +76,25 @@ if (typeof window !== "undefined") {
               <div className='nav-bar'>
                   <ul className='menu'>
                   <a href='#home'> <li>Home</li></a>
-                      {/* <Link href="/courses"><li>Courses</li></Link> */}
+                      <Link href="/dashboard"><li>Dashboard</li></Link>
                       <li><a href='#about-us'>About Us</a></li>
                       <li><a href='#contact'>Contact</a></li>
                       <li><a href='#testimony'>Testimonials</a></li>
                       <li><a href='#support'>Support</a></li>
-                      {isAuthenticated ? 
+                      {/* {isAuthenticated ?  */}
                       <>
-                      <li> <Link href={'/dashboard'}>Dashboard</Link> </li> 
-                      <li onClick={removeToken}>Logout</li>
+                      <li> 
+                        <ConnectButton />
+                        </li> 
+                      {/* <li onClick={removeToken}>Logout</li> */}
                       </>
-                    : (
+                    {/* // : ( */}
 
-                       <>
-                        <li onClick={handleSignUpClick}>Sign Up</li>
-                        <li onClick={handleLoginClick}>Log In </li>
-                       </>
-                    )}
+                    {/* //    <>
+                    //     <li onClick={handleSignUpClick}>Sign Up</li>
+                    //     <li onClick={handleLoginClick}>Log In </li>
+                    //    </> */}
+                    {/* // )} */}
                       
                      
                       
